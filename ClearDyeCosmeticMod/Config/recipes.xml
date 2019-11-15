@@ -1,0 +1,13 @@
+<configs>
+<append xpath="/recipes">
+
+	<recipe name="Clear Dye" count="1" >
+		<ingredient name="modDyeRed" count="1"/>
+		<ingredient name="modDyeGreen" count="1"/>
+		<ingredient name="modDyeBlue" count="1"/> 
+
+	</recipe>
+
+</append>
+
+</configs>
