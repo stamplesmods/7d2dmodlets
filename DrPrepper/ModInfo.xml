@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="DrPrepper" />
+		<Description value="This modlet adds the Dr. Prepper drink to slightly increase run speed and carry capacity.  It can be found in vending machines and beverage loot" />
+		<Author value="stample, stamplesmods@gmail.com" />
+		<Version value="1.0.0" />
+	</ModInfo>
+</xml>

@@ -1,0 +1,31 @@
+<configs>
+<append xpath="/buffs">
+
+
+	<buff name="buffDrPrepper" name_key="buffDrPrepperName" description_key="buffDrPrepperDesc" tooltip_key="buffDrPrepperTooltip" icon="ui_game_symbol_pills">
+		<stack_type value="replace"/><duration value="0"/>
+		<display_value value=".buffDrPrepperDisplay"/><display_value_format value="time"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffDrPrepperDuration" operation="subtract" value="@$MetabolismDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffDrPrepperDisplay" operation="set" value="@$buffDrPrepperDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffDrPrepperDisplay" operation="divide" value="@$MetabolismDuration"/>
+		</effect_group>
+		<effect_group>
+			<requirement name="CVarCompare" cvar="$buffDrPrepperDuration" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffDrPrepperDisplay" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffDrPrepperDuration" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffDrPrepper"/>
+		</effect_group>
+
+		<effect_group>
+			<passive_effect name="RunSpeed" operation="perc_add" value=".1"/>
+		</effect_group>
+		
+		<effect_group tiered="false">
+			<passive_effect name="CarryCapacity" operation="base_add" value="3"/>
+			<display_value name="dCarryCapacity" value="3"/>
+		</effect_group>
+	</buff>
+
+</append>
+</configs>

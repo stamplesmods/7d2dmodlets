@@ -1,0 +1,6 @@
+Key,Source,Context,Changes,English,French,German,Klingon,Spanish,Polish
+buffDrPrepperDesc,buffs,Buff,New,You get there faster while carrying more.\n\nIt's the sugar-buzz that gets you done sooner!,,,,,
+buffDrPrepperName,buffs,Buff,New,Dr. Prepper,,,,,
+buffDrPrepperTooltip,buffs,Buff,New,You feel ready to get busy!,,,,,
+"Dr. Prepper",items,Food,New,Dr. Prepper,,,,,
+"Dr. PrepperDesc",items,Food,EnChanged,Get there first and bring a bigger load with Dr. Prepper!,,,,,

@@ -1,0 +1,5 @@
+<configs>
+<insertAfter xpath="/traders/trader_item_groups/trader_item_group[@name='preparedDrink']/item[@name='drinkJarBoiledWater']">
+	<item name="Dr. Prepper" count="1,5"/>
+</insertAfter>
+</configs>
