@@ -19,7 +19,8 @@
 		
 	<effect_group tiered="false">
 		<passive_effect name="JumpStrength" operation="perc_add" value="4.2"/>
-
+		<passive_effect name="StaminaLoss" operation="perc_add" value="-.75" tags="jumping"/>
+		
 		<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffDontBreakMyLeg"/>
 		<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffDontBreakMyLeg"/>
 
