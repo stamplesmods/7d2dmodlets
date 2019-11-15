@@ -18,6 +18,7 @@
 			<display_value name="dStaminaRegen" value=".15"/>
 			<display_value name="dRunSpeed" value=".1"/>
 			<display_value name="dDuration" value="363"/>
+			<display_value name="dCarryCapacity" value="+3"/>
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDrPrepperDuration" operation="add" value="363"/>
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffDrPrepperDuration" operation="set" value="1083">
 				<requirement name="CVarCompare" cvar="$buffDrPrepperDuration" operation="GT" value="1083"/></triggered_effect>
