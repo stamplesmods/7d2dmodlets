@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="GhillieSuitAsMods" />
+		<Description value="This modlet changes the Ghillie Suit clothing pieces into mods for head/jacket/pants.  It also removes the original items and recipes so you can't put a ghillie mod in a ghillie suit" />
+		<Author value="stample, stamplesmods@gmail.com" />
+		<Version value="1.0.0" />
+	</ModInfo>
+</xml>

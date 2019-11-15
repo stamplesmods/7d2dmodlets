@@ -1,0 +1,15 @@
+<configs>
+<!-- add jacket tag to existing jackets so we can differentiate from shirts/chest armor -->
+<append xpath="/items/item[@name='apparelHazmatJacket']/property[@name='Tags']/@value">,jacket</append>
+<append xpath="/items/item[@name='apparelCoatLeatherPoncho']/property[@name='Tags']/@value">,jacket</append>
+<append xpath="/items/item[@name='apparelCoatLeatherDuster']/property[@name='Tags']/@value">,jacket</append>
+<append xpath="/items/item[@name='apparelCoatPufferCoat']/property[@name='Tags']/@value">,jacket</append>
+<append xpath="/items/item[@name='apparelCoatJacketGeneric']/property[@name='Tags']/@value">,jacket</append>
+
+<!-- remove original ghillie suit items -->
+<!--
+<remove xpath="/items/item[@name='apparelGhillieSuitHood']" />
+<remove xpath="/items/item[@name='apparelGhillieSuitPants']" />
+<remove xpath="/items/item[@name='apparelGhillieSuitJacket']" />
+-->
+</configs>
