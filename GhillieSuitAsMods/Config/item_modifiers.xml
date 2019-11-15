@@ -32,7 +32,7 @@
 		<item_property_overrides name="*">
 			<property name="UMA.Mesh" value="ghillie_suit_shirt"/>
 			<property name="UMA.Overlay0" value="ghillie_suit"/>
-			<property name="UMA.Overlay0Tint" value="105,110,83"/>
+			<!-- <property name="UMA.Overlay0Tint" value="105,110,83"/> -->
 			<property name="UMA.Mask0" value="hands" param1="outer"/>
 			<property name="UMA.Mask1" value="chest" param1="middle"/>
 			<property name="UMA.Overlay1" value=""/>
@@ -62,7 +62,7 @@
 		<item_property_overrides name="*">
 			<property name="UMA.Mesh" value="ghillie_suit_pants"/>
 			<property name="UMA.Overlay0" value="ghillie_suit"/>
-			<property name="UMA.Overlay0Tint" value="105,110,83"/>
+			<!-- <property name="UMA.Overlay0Tint" value="105,110,83"/> -->
 		</item_property_overrides>
 
 		<effect_group tiered="false">
