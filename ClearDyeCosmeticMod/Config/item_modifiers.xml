@@ -1,0 +1,38 @@
+<configs>
+<append xpath="/item_modifiers">
+
+	<item_modifier name="Clear Dye" installable_tags="armor,clothing" modifier_tags="dye" type="attachment"  cosmetic_install_chance="0">
+		<property name="CustomIcon" value="modDyeWhite"/>
+		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
+		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+		<property name="EconomicValue" value="10"/>
+		<property name="DisplayType" value="clothing"/>
+		<item_property_overrides name="*">
+			<property name="CustomIconTint" value="20,20,20"/>
+			<property name="UMA.Mesh" value=""/>
+			<property name="UMA.Overlay0" value=""/>
+			<property name="UMA.Overlay0Tint" value=""/>
+			<property name="UMA.Mask0" value="" param1=""/>
+			<property name="UMA.Mask1" value="" param1=""/>
+			<property name="UMA.Mask2" value="" param1=""/>
+			<property name="UMA.Mask3" value="" param1=""/>
+			<property name="UMA.Mask4" value="" param1=""/>
+			<property name="UMA.Mask5" value="" param1=""/>
+			<property name="UMA.Mask6" value="" param1=""/>
+			<property name="UMA.Mask7" value="" param1=""/>
+			<property name="UMA.Mask8" value="" param1=""/>
+			<property name="UMA.Mask9" value="" param1=""/>
+			<property name="UMA.Overlay1" value=""/>
+			<property name="UMA.Overlay1Tint" value=""/>
+			<property name="UMA.Overlay2" value=""/>
+			<property name="UMA.Overlay2Tint" value=""/>
+		</item_property_overrides>
+
+	</item_modifier>
+
+</append>
+
+
+
+</configs>
+

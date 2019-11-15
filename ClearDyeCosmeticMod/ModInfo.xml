@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="ClearDyeCosmeticMod" />
+		<Description value="This modlet adds a 'Clear Dye' that essentially removes the UMA mesh of whatever armor piece its put into" />
+		<Author value="stample, stamplesmods@gmail.com" />
+		<Version value="1.0.0" />
+	</ModInfo>
+</xml>
