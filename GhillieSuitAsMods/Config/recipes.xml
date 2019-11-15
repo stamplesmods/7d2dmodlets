@@ -1,0 +1,26 @@
+<configs>
+<append xpath="/recipes">
+<!-- add Ghillie Suit Mod recipes -->
+	<recipe name="Ghillie Hood Mod" count="1" tags="learnable">
+		<ingredient name="resourceYuccaFibers" count="50"/>
+		<ingredient name="resourceSewingKit" count="1"/>
+	</recipe>
+
+	<recipe name="Ghillie Jacket Mod" count="1" tags="learnable">
+		<ingredient name="resourceYuccaFibers" count="50"/>
+		<ingredient name="resourceSewingKit" count="1"/>
+	</recipe>
+
+	<recipe name="Ghillie Pants Mod" count="1" tags="learnable">
+		<ingredient name="resourceYuccaFibers" count="50"/>
+		<ingredient name="resourceSewingKit" count="1"/>
+	</recipe>
+</append>
+
+<!-- remove original Ghillie Suit recipes -->
+<remove xpath="/recipes/recipe[@name='apparelGhillieSuitHood']" />
+<remove xpath="/recipes/recipe[@name='apparelGhillieSuitJacket']" />
+<remove xpath="/recipes/recipe[@name='apparelGhillieSuitPants']" />
+
+
+</configs>

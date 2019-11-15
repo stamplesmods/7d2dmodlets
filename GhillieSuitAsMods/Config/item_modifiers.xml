@@ -1,0 +1,83 @@
+<configs>
+<append xpath="/item_modifiers">
+
+	<item_modifier name="Ghillie Hood Mod" installable_tags="head" blocked_tags="clothing" modifier_tags="rare" type="attachment">
+		<property name="UnlockedBy" value="perkSniperComplete"/>
+		<property name="CustomIcon" value="apparelGhillieSuitHood"/>
+		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
+		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+		<property name="EconomicValue" value="10"/>
+		<property name="DisplayType" value="clothing"/>
+		<item_property_overrides name="*">
+			<property name="UMA.Mesh" value="ghillie_suit_hat"/>
+			<property name="UMA.Overlay0" value="ghillie_suit"/>
+		</item_property_overrides>
+
+		<effect_group tiered="false">
+			<passive_effect name="HypothermalResist" operation="base_add" value="1"/>
+			<passive_effect name="HyperthermalResist" operation="base_add" value="1,3.5"/>
+			<passive_effect name="LightMultiplier" operation="perc_add" value="-.07"><requirement name="!IsIndoors"/></passive_effect>
+			<passive_effect name="LightMultiplier" operation="perc_add" value="-.05"><requirement name="IsIndoors"/></passive_effect>
+			<display_value name="dLightMultiplier" value="-.07"/>
+		</effect_group>
+	</item_modifier>
+	
+	<item_modifier name="Ghillie Jacket Mod" installable_tags="jacket" modifier_tags="rare" type="attachment">
+		<property name="UnlockedBy" value="perkSniperComplete"/>
+		<property name="CustomIcon" value="apparelGhillieSuitJacket"/>
+		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
+		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+		<property name="EconomicValue" value="10"/>
+		<property name="DisplayType" value="clothingGhillie"/>
+		<item_property_overrides name="*">
+			<property name="UMA.Mesh" value="ghillie_suit_shirt"/>
+			<property name="UMA.Overlay0" value="ghillie_suit"/>
+			<property name="UMA.Overlay0Tint" value="105,110,83"/>
+			<property name="UMA.Mask0" value="hands" param1="outer"/>
+			<property name="UMA.Mask1" value="chest" param1="middle"/>
+			<property name="UMA.Overlay1" value=""/>
+			<property name="UMA.Overlay1Tint" value=""/>
+			<property name="UMA.Overlay2" value=""/>
+			<property name="UMA.Overlay2Tint" value=""/>
+			<property name="UMA.Overlay3" value=""/>
+		</item_property_overrides>
+
+		<effect_group tiered="false">
+		<passive_effect name="HypothermalResist" operation="base_add" value="1"/>
+		<passive_effect name="HyperthermalResist" operation="base_add" value="1,3.5"/>
+		<passive_effect name="LightMultiplier" operation="perc_add" value="-.07"><requirement name="!IsIndoors"/></passive_effect>
+		<passive_effect name="LightMultiplier" operation="perc_add" value="-.05"><requirement name="IsIndoors"/></passive_effect>
+		<display_value name="dLightMultiplier" value="-.07"/>
+		<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.05"/><display_value name="dNoiseMultiplier" value="-.05"/>
+		</effect_group>
+	</item_modifier>
+
+	<item_modifier name="Ghillie Pants Mod" installable_tags="legs" blocked_tags="armor" modifier_tags="rare" type="attachment">
+		<property name="UnlockedBy" value="perkSniperComplete"/>
+		<property name="CustomIcon" value="apparelGhillieSuitPants"/>
+		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
+		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+		<property name="EconomicValue" value="10"/>
+		<property name="DisplayType" value="clothingGhillie"/>
+		<item_property_overrides name="*">
+			<property name="UMA.Mesh" value="ghillie_suit_pants"/>
+			<property name="UMA.Overlay0" value="ghillie_suit"/>
+			<property name="UMA.Overlay0Tint" value="105,110,83"/>
+		</item_property_overrides>
+
+		<effect_group tiered="false">
+		<passive_effect name="HypothermalResist" operation="base_add" value="1"/>
+		<passive_effect name="HyperthermalResist" operation="base_add" value="1,3.5"/>
+		<passive_effect name="LightMultiplier" operation="perc_add" value="-.07"><requirement name="!IsIndoors"/></passive_effect>
+		<passive_effect name="LightMultiplier" operation="perc_add" value="-.05"><requirement name="IsIndoors"/></passive_effect>
+		<display_value name="dLightMultiplier" value="-.07"/>
+		<passive_effect name="NoiseMultiplier" operation="perc_add" value="-.05"/><display_value name="dNoiseMultiplier" value="-.05"/>
+		</effect_group>
+	</item_modifier>
+
+</append>
+
+
+
+</configs>
+
