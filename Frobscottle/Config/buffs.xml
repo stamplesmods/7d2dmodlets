@@ -24,8 +24,8 @@
 		<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffDontBreakMyLeg"/>
 		<triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffDontBreakMyLeg"/>
 
+		<triggered_effect trigger="onSelfJump" action="PlaySound" sound="m136_fire" play_in_head="false"/>
 		<triggered_effect trigger="onSelfJump" action="PlaySound" sound="generator_stop" play_in_head="false"/>
-		<triggered_effect trigger="onSelfJump" action="FadeOutSound" sound="generator_stop" play_in_head="false"/>
 		<triggered_effect trigger="onSelfJump" action="AddBuff" buff="buffJumpJetsAirborne"/>
 	</effect_group>
 	</buff>
