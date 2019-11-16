@@ -1,0 +1,3 @@
+Key,Source,Context,Changes,English,French,German,Klingon,Spanish,Polish
+"Emperor Dye",item_modifiers,mod,New,Dye: Emperor,,,,,
+"Emperor DyeDesc",item_modifiers,mod,EnChanged,This fancy dye will make your gear fit for an emperor.,,,,,
