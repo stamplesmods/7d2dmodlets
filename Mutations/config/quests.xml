@@ -1,0 +1,646 @@
+<configs>
+
+	<insertAfter xpath="/quests/quest[@id='tier2_buried_supplies']" >
+	
+	<quest id="mutagen_fetch_clear">
+		<property name="name_key" value="mutagen_fetch_clear"/>
+		<property name="subtitle_key" value="mutagen_fetch_clear_subtitle"/>
+		<property name="description_key" value="mutagen_fetch_clear_description"/>
+		<property name="icon" value="ui_game_symbol_quest"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="challenge"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="4"/>
+		<property name="offer_key" value="mutagen_fetch_clear_offer"/>
+		<property name="statement_key" value="mutagen_fetch_clear_statement"/>
+		<property name="response_key" value="mutagen_fetch_clear_response"/>
+		<property name="login_rally_reset" value="true"/>
+
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="mutagen_fetch_clear_completion"/>
+
+		<objective type="RandomPOIGoto">
+			<property name="phase" value="1"/>
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="phase" value="2"/>
+		</objective>
+
+		<objective type="ClearSleepers">
+			<property name="phase" value="3"/>
+		</objective>
+
+		<objective type="FetchFromContainer">
+			<property name="phase" value="3"/>
+			<property name="quest_item_ID" value="25"/>
+			<property name="item_count" value="1"/>
+			<property name="default_container" value="cntFetchQuestSatchel"/>
+		</objective>
+
+		<objective type="POIStayWithin">
+			<property name="phase" value="3"/>
+			<property name="radius" value="25"/>
+		</objective>
+
+		<objective type="InteractWithNPC">
+			<property name="phase" value="4"/>
+		</objective>
+
+<!--
+		<objective type="TreasureChest">
+			<property name="block" value="cntBuriedWeaponChest"/>
+			<property name="distance" value="500-750"/>
+			<property name="default_radius" value="7"/>
+			<property name="container_type" value="Supplies"/>
+		</objective>
+
+		<objective type="FetchFromTreasure">
+			<property name="block" value="cntBuriedWeaponChest"/>
+			<property name="quest_item_ID" value="25"/>
+			<property name="item_count" value="1"/>
+		</objective>
+
+		<action type="SpawnEnemy" id="zombieSoldierFeral,zombieSoldierRadiated" value="4-7" phase="2"/>
+
+		<objective type="InteractWithNPC">
+			<property name="phase" value="2"/>
+		</objective>
+-->
+
+		<reward type="Exp" value="15000"/>
+		<reward type="Item" id="resourceMutagen" value="1" />
+		<reward type="LootItem" id="groupQuestTools" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestMedical" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestMelee,groupQuestRanged,groupQuestArmor" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestMods" ischosen="true" value="7"/>
+
+	</quest>
+	
+	<quest id="tier5_buried_military_secrets">
+		<property name="name_key" value="quest_tier5_buried_military_secrets"/>
+		<property name="subtitle_key" value="quest_tier5_buried_military_secrets_subtitle"/>
+		<property name="description_key" value="quest_tier5_buried_military_secrets_description"/>
+		<property name="icon" value="ui_game_symbol_treasure"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="quest"/>
+		<property name="offer_key" value="quest_tier5_buried_military_secrets_offer"/>
+		<property name="difficulty" value="medium"/>
+		<property name="difficulty_tier" value="5"/>
+		<property name="statement_key" value="quest_tier5_buried_military_secrets_statement"/>
+		<property name="response_key" value="quest_tier5_buried_military_secrets_response"/>
+		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="quest_tier5_buried_military_secrets_completion"/>
+		<property name="shareable" value="true"/>
+
+		<objective type="TreasureChest">
+			<property name="block" value="cntBuriedWeaponChest"/>
+			<property name="distance" value="500-750"/>
+			<property name="default_radius" value="12"/>
+			<property name="container_type" value="Supplies"/>
+		</objective>
+
+		<objective type="FetchFromTreasure">
+			<property name="block" value="cntBuriedWeaponChest"/>
+			<property name="quest_item_ID" value="24"/>
+			<property name="item_count" value="1"/>
+		</objective>
+
+		<action type="SpawnEnemy" id="zombieSoldier,zombieSoldierFeral,zombieSoldierRadiated,zombieMaleHazmat" value="5-7" phase="2"/>
+
+		<objective type="ReturnToNPC">
+			<property name="phase" value="2"/>
+		</objective>
+
+		<objective type="InteractWithNPC">
+			<property name="phase" value="2"/>
+		</objective>
+
+		<reward type="Exp" value="5000"/>
+		<reward type="Item" id="resourceUnpoweredHomingBeacon" value="1"/>
+		<reward type="LootItem" id="groupQuestTools" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestMedical" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestMelee,groupQuestRanged,groupQuestArmor" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestMods" ischosen="true" value="7"/>
+		<reward type="Quest" id="quest_PowerHomingBeacon"/>
+	</quest>
+	
+	<quest id="quest_PowerHomingBeacon">
+		<property name="name_key" value="quest_PowerHomingBeacon"/>
+		<property name="subtitle" value="Power the Homing Beacon"/>
+ 		<property name="subtitle_key" value="quest_PowerHomingBeacon_subtitle"/>
+		<property name="description_key" value="quest_PowerHomingBeacon_description"/>
+		<property name="icon" value="ui_game_symbol_science"/>
+		<property name="category_key" value="quest"/>
+		<property name="offer_key" value="quest_PowerHomingBeacon_offer"/>
+		<property name="shareable" value="false"/>
+
+		<objective type="FetchKeep" id="resourceUnpoweredHomingBeacon" value="1" phase="1"/>
+		<objective type="FetchKeep" id="carBattery" value="1" phase="1"/>
+
+		<objective type="Craft">
+			<property name="phase" value="2"/>
+			<property name="item" value="qc_HomingBeacon"/>
+			<property name="count" value="1"/>
+		</objective>
+
+		<reward type="Exp" value="1000"/>
+	</quest>	
+
+	<quest id="challenge_mutantBear_1of3">
+		<property name="name_key" value="challenge_mutantBear1"/>
+		<property name="group_name_key" value="Mutant Bear Bounty"/>
+		<property name="subtitle_key" value="challenge_mutantBear_subtitle"/>
+		<property name="description_key" value="challenge_mutantBear_offer"/>
+		<property name="icon" value="ui_game_symbol_zombie"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="challenge"/>
+		<property name="offer_key" value="challenge_mutantBear_offer"/>
+		<property name="difficulty" value="insane"/>
+		<property name="difficulty_tier" value="1"/>
+		<property name="shareable" value="false"/>
+
+		<objective type="RandomPOIGoto">
+			<property name="phase" value="1"/>
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="phase" value="2"/>
+		</objective>
+
+		<action type="SpawnEnemy" id="animalBear" value="2-3" phase="3"/>
+		<objective type="AnimalKill" id="animalBear" value="1" phase="3"/>
+
+
+		<reward type="Exp" value="5000"/>
+		<reward type="Quest" id="challenge_mutantBear_2of3"/>
+	</quest>
+	
+	<quest id="challenge_mutantBear_2of3">
+		<property name="name_key" value="challenge_mutantBear2"/>
+		<property name="group_name_key" value="Mutant Bear Bounty"/>
+		<property name="subtitle_key" value="challenge_mutantBear_subtitle"/>
+		<property name="description_key" value="challenge_mutantBear_offer"/>
+		<property name="icon" value="ui_game_symbol_zombie"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="challenge"/>
+		<property name="offer_key" value="challenge_mutantBear_offer"/>
+		<property name="difficulty" value="insane"/>
+		<property name="shareable" value="false"/>
+
+		<objective type="RandomGoto" value="100-300" phase="1">
+			<property name="completion_distance" value="50"/>
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="start_mode" value="Create"/>
+			<property name="phase" value="2"/>
+		</objective>
+
+		<action type="SpawnEnemy" id="animalBear" value="2-3" phase="3"/>
+		<objective type="AnimalKill" id="animalBear" value="1" phase="3"/>
+
+		<reward type="Exp" value="5000"/>
+		<reward type="Quest" id="challenge_mutantBear_3of3"/>
+	</quest>
+	
+	<quest id="challenge_mutantBear_3of3">
+		<property name="name_key" value="challenge_mutantBear3"/>
+		<property name="group_name_key" value="Mutant Bear Bounty"/>
+		<property name="subtitle_key" value="challenge_mutantBear_subtitle"/>
+		<property name="description_key" value="challenge_mutantBear_offer"/>
+		<property name="icon" value="ui_game_symbol_zombie"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="challenge"/>
+		<property name="offer_key" value="challenge_mutantBear_offer"/>
+		<property name="difficulty" value="insane"/>
+		<property name="completiontype" value="TurnIn"/>
+		<property name="shareable" value="false"/>
+
+		<objective type="RandomGoto" value="100-300" phase="1">
+			<property name="completion_distance" value="50"/>
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="start_mode" value="Create"/>
+			<property name="phase" value="2"/>
+		</objective>
+
+		<action type="SpawnEnemy" id="animalBear" value="3" phase="3"/>
+		<objective type="AnimalKill" id="animalBear" value="1" phase="3"/>
+
+		<objective type="InteractWithNPC">
+			<property name="phase" value="4"/>
+		</objective>
+
+		<reward type="Exp" value="5000"/>
+		<reward type="Item" id="MutantBearParts" value="1"/>
+		<reward type="LootItem" id="groupQuestTools" ischosen="true" isfixed="true" value="7"/>
+		<reward type="LootItem" id="groupQuestMedical" ischosen="true" isfixed="true" value="7"/>
+		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestMelee,groupQuestRanged,groupQuestArmor" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestMods" ischosen="true" value="7"/>
+	</quest>
+	
+	<quest id="challenge_mutantBoar_1of3">
+		<property name="name_key" value="challenge_mutantBoar1"/>
+		<property name="group_name_key" value="Mutant Boar Bounty"/>
+		<property name="subtitle_key" value="challenge_mutantBoar_subtitle"/>
+		<property name="description_key" value="challenge_mutantBoar_offer"/>
+		<property name="icon" value="ui_game_symbol_zombie"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="challenge"/>
+		<property name="offer_key" value="challenge_mutantBoar_offer"/>
+		<property name="difficulty" value="insane"/>
+		<property name="difficulty_tier" value="1"/>
+		<property name="shareable" value="false"/>
+
+		<objective type="RandomPOIGoto">
+			<property name="phase" value="1"/>
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="phase" value="2"/>
+		</objective>
+
+		<action type="SpawnEnemy" id="animalBoar" value="4-6" phase="3"/>
+		<objective type="AnimalKill" id="animalBoar" value="3" phase="3"/>
+
+
+		<reward type="Exp" value="5000"/>
+		<reward type="Quest" id="challenge_mutantBoar_2of3"/>
+	</quest>
+	
+	<quest id="challenge_mutantBoar_2of3">
+		<property name="name_key" value="challenge_mutantBoar2"/>
+		<property name="group_name_key" value="Mutant Boar Bounty"/>
+		<property name="subtitle_key" value="challenge_mutantBoar_subtitle"/>
+		<property name="description_key" value="challenge_mutantBoar_offer"/>
+		<property name="icon" value="ui_game_symbol_zombie"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="challenge"/>
+		<property name="offer_key" value="challenge_mutantBoar_offer"/>
+		<property name="difficulty" value="insane"/>
+		<property name="shareable" value="false"/>
+
+		<objective type="RandomGoto" value="100-300" phase="1">
+			<property name="completion_distance" value="50"/>
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="start_mode" value="Create"/>
+			<property name="phase" value="2"/>
+		</objective>
+
+		<action type="SpawnEnemy" id="animalBoar" value="4-7" phase="3"/>
+		<objective type="AnimalKill" id="animalBoar" value="3" phase="3"/>
+
+		<reward type="Exp" value="5000"/>
+		<reward type="Quest" id="challenge_mutantBoar_3of3"/>
+	</quest>
+	
+	<quest id="challenge_mutantBoar_3of3">
+		<property name="name_key" value="challenge_mutantBoar3"/>
+		<property name="group_name_key" value="Mutant Boar Bounty"/>
+		<property name="subtitle_key" value="challenge_mutantBoar_subtitle"/>
+		<property name="description_key" value="challenge_mutantBoar_offer"/>
+		<property name="icon" value="ui_game_symbol_zombie"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="challenge"/>
+		<property name="offer_key" value="challenge_mutantBoar_offer"/>
+		<property name="difficulty" value="insane"/>
+		<property name="completiontype" value="TurnIn"/>
+		<property name="shareable" value="false"/>
+
+		<objective type="RandomGoto" value="100-300" phase="1">
+			<property name="completion_distance" value="50"/>
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="start_mode" value="Create"/>
+			<property name="phase" value="2"/>
+		</objective>
+
+		<action type="SpawnEnemy" id="animalBoar" value="3-5" phase="3"/>
+		<action type="SpawnEnemy" id="animalBossGrace" value="1" phase="3"/>
+		<objective type="AnimalKill" id="animalBossGrace" value="1" phase="3"/>
+
+		<objective type="InteractWithNPC">
+			<property name="phase" value="4"/>
+		</objective>
+
+		<reward type="Exp" value="5000"/>
+		<reward type="Item" id="MutantBoarParts" value="1"/>
+		<reward type="LootItem" id="groupQuestTools" ischosen="true" isfixed="true" value="7"/>
+		<reward type="LootItem" id="groupQuestMedical" ischosen="true" isfixed="true" value="7"/>
+		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestMelee,groupQuestRanged,groupQuestArmor" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestMods" ischosen="true" value="7"/>
+	</quest>
+	
+	<quest id="challenge_mutantDireWolf_1of3">
+		<property name="name_key" value="challenge_mutantDireWolf1"/>
+		<property name="group_name_key" value="Mutant Dire Wolf Bounty"/>
+		<property name="subtitle_key" value="challenge_mutantDireWolf_subtitle"/>
+		<property name="description_key" value="challenge_mutantDireWolf_offer"/>
+		<property name="icon" value="ui_game_symbol_zombie"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="challenge"/>
+		<property name="offer_key" value="challenge_mutantDireWolf_offer"/>
+		<property name="difficulty" value="insane"/>
+		<property name="difficulty_tier" value="1"/>
+		<property name="shareable" value="false"/>
+
+		<objective type="RandomPOIGoto">
+			<property name="phase" value="1"/>
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="phase" value="2"/>
+		</objective>
+
+		<action type="SpawnEnemy" id="animalWolf" value="3-5" phase="3"/>
+		<objective type="AnimalKill" id="animalWolf" value="2" phase="3"/>
+
+
+		<reward type="Exp" value="5000"/>
+		<reward type="Quest" id="challenge_mutantDireWolf_2of3"/>
+	</quest>
+	
+	<quest id="challenge_mutantDireWolf_2of3">
+		<property name="name_key" value="challenge_mutantDireWolf2"/>
+		<property name="group_name_key" value="Mutant Dire Wolf Bounty"/>
+		<property name="subtitle_key" value="challenge_mutantDireWolf_subtitle"/>
+		<property name="description_key" value="challenge_mutantDireWolf_offer"/>
+		<property name="icon" value="ui_game_symbol_zombie"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="challenge"/>
+		<property name="offer_key" value="challenge_mutantDireWolf_offer"/>
+		<property name="difficulty" value="insane"/>
+		<property name="shareable" value="false"/>
+
+		<objective type="RandomGoto" value="100-300" phase="1">
+			<property name="completion_distance" value="50"/>
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="start_mode" value="Create"/>
+			<property name="phase" value="2"/>
+		</objective>
+
+		<action type="SpawnEnemy" id="animalWolf" value="4-6" phase="3"/>
+		<objective type="AnimalKill" id="animalWolf" value="3" phase="3"/>
+
+		<reward type="Exp" value="5000"/>
+		<reward type="Quest" id="challenge_mutantDireWolf_3of3"/>
+	</quest>
+	
+	<quest id="challenge_mutantDireWolf_3of3">
+		<property name="name_key" value="challenge_mutantDireWolf3"/>
+		<property name="group_name_key" value="Mutant Dire Wolf Bounty"/>
+		<property name="subtitle_key" value="challenge_mutantDireWolf_subtitle"/>
+		<property name="description_key" value="challenge_mutantDireWolf_offer"/>
+		<property name="icon" value="ui_game_symbol_zombie"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="challenge"/>
+		<property name="offer_key" value="challenge_mutantDireWolf_offer"/>
+		<property name="difficulty" value="insane"/>
+		<property name="completiontype" value="TurnIn"/>
+		<property name="shareable" value="false"/>
+
+		<objective type="RandomGoto" value="100-300" phase="1">
+			<property name="completion_distance" value="50"/>
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="start_mode" value="Create"/>
+			<property name="phase" value="2"/>
+		</objective>
+
+		<action type="SpawnEnemy" id="animalWolf" value="3-5" phase="3"/>
+		<action type="SpawnEnemy" id="animalDireWolf" value="1" phase="3"/>
+		<objective type="AnimalKill" id="animalDireWolf" value="1" phase="3"/>
+
+		<objective type="InteractWithNPC">
+			<property name="phase" value="4"/>
+		</objective>
+
+		<reward type="Exp" value="5000"/>
+		<reward type="Item" id="MutantDireWolfParts" value="1"/>
+		<reward type="LootItem" id="groupQuestTools" ischosen="true" isfixed="true" value="7"/>
+		<reward type="LootItem" id="groupQuestMedical" ischosen="true" isfixed="true" value="7"/>
+		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestMelee,groupQuestRanged,groupQuestArmor" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestMods" ischosen="true" value="7"/>
+	</quest>
+	
+	<quest id="challenge_mutantCat_1of3">
+		<property name="name_key" value="challenge_mutantCat1"/>
+		<property name="group_name_key" value="Mutant Cat Bounty"/>
+		<property name="subtitle_key" value="challenge_mutantCat_subtitle"/>
+		<property name="description_key" value="challenge_mutantCat_offer"/>
+		<property name="icon" value="ui_game_symbol_zombie"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="challenge"/>
+		<property name="offer_key" value="challenge_mutantCat_offer"/>
+		<property name="difficulty" value="insane"/>
+		<property name="difficulty_tier" value="1"/>
+		<property name="shareable" value="false"/>
+
+		<objective type="RandomPOIGoto">
+			<property name="phase" value="1"/>
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="phase" value="2"/>
+		</objective>
+
+		<action type="SpawnEnemy" id="animalMountainLion" value="2-3" phase="3"/>
+		<objective type="AnimalKill" id="animalMountainLion" value="1" phase="3"/>
+
+
+		<reward type="Exp" value="5000"/>
+		<reward type="Quest" id="challenge_mutantCat_2of3"/>
+	</quest>
+	
+	<quest id="challenge_mutantCat_2of3">
+		<property name="name_key" value="challenge_mutantCat2"/>
+		<property name="group_name_key" value="Mutant Cat Bounty"/>
+		<property name="subtitle_key" value="challenge_mutantCat_subtitle"/>
+		<property name="description_key" value="challenge_mutantCat_offer"/>
+		<property name="icon" value="ui_game_symbol_zombie"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="challenge"/>
+		<property name="offer_key" value="challenge_mutantCat_offer"/>
+		<property name="difficulty" value="insane"/>
+		<property name="shareable" value="false"/>
+
+		<objective type="RandomGoto" value="100-300" phase="1">
+			<property name="completion_distance" value="50"/>
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="start_mode" value="Create"/>
+			<property name="phase" value="2"/>
+		</objective>
+
+		<action type="SpawnEnemy" id="animalMountainLion" value="2-3" phase="3"/>
+		<objective type="AnimalKill" id="animalMountainLion" value="1" phase="3"/>
+
+		<reward type="Exp" value="5000"/>
+		<reward type="Quest" id="challenge_mutantCat_3of3"/>
+	</quest>
+	
+	<quest id="challenge_mutantCat_3of3">
+		<property name="name_key" value="challenge_mutantCat3"/>
+		<property name="group_name_key" value="Mutant Cat Bounty"/>
+		<property name="subtitle_key" value="challenge_mutantCat_subtitle"/>
+		<property name="description_key" value="challenge_mutantCat_offer"/>
+		<property name="icon" value="ui_game_symbol_zombie"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="challenge"/>
+		<property name="offer_key" value="challenge_mutantCat_offer"/>
+		<property name="difficulty" value="insane"/>
+		<property name="completiontype" value="TurnIn"/>
+		<property name="shareable" value="false"/>
+
+		<objective type="RandomGoto" value="100-300" phase="1">
+			<property name="completion_distance" value="50"/>
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="start_mode" value="Create"/>
+			<property name="phase" value="2"/>
+		</objective>
+
+		<action type="SpawnEnemy" id="animalMountainLion" value="2-4" phase="3"/>
+		<objective type="AnimalKill" id="animalMountainLion" value="1" phase="3"/>
+
+		<objective type="InteractWithNPC">
+			<property name="phase" value="4"/>
+		</objective>
+
+		<reward type="Exp" value="5000"/>
+		<reward type="Item" id="MutantCatParts" value="1"/>
+		<reward type="LootItem" id="groupQuestTools" ischosen="true" isfixed="true" value="7"/>
+		<reward type="LootItem" id="groupQuestMedical" ischosen="true" isfixed="true" value="7"/>
+		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestMelee,groupQuestRanged,groupQuestArmor" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestMods" ischosen="true" value="7"/>
+	</quest>
+	
+	<quest id="challenge_mutantCoyote_1of3">
+		<property name="name_key" value="challenge_mutantCoyote1"/>
+		<property name="group_name_key" value="Mutant Coyote Bounty"/>
+		<property name="subtitle_key" value="challenge_mutantCoyote_subtitle"/>
+		<property name="description_key" value="challenge_mutantCoyote_offer"/>
+		<property name="icon" value="ui_game_symbol_zombie"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="challenge"/>
+		<property name="offer_key" value="challenge_mutantCoyote_offer"/>
+		<property name="difficulty" value="insane"/>
+		<property name="difficulty_tier" value="1"/>
+		<property name="shareable" value="false"/>
+
+		<objective type="RandomPOIGoto">
+			<property name="phase" value="1"/>
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="phase" value="2"/>
+		</objective>
+
+		<action type="SpawnEnemy" id="animalCoyote" value="5-8" phase="3"/>
+		<objective type="AnimalKill" id="animalCoyote" value="4" phase="3"/>
+
+
+		<reward type="Exp" value="5000"/>
+		<reward type="Quest" id="challenge_mutantCoyote_2of3"/>
+	</quest>
+	
+	<quest id="challenge_mutantCoyote_2of3">
+		<property name="name_key" value="challenge_mutantCoyote2"/>
+		<property name="group_name_key" value="Mutant Coyote Bounty"/>
+		<property name="subtitle_key" value="challenge_mutantCoyote_subtitle"/>
+		<property name="description_key" value="challenge_mutantCoyote_offer"/>
+		<property name="icon" value="ui_game_symbol_zombie"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="challenge"/>
+		<property name="offer_key" value="challenge_mutantCoyote_offer"/>
+		<property name="difficulty" value="insane"/>
+		<property name="shareable" value="false"/>
+
+		<objective type="RandomGoto" value="100-300" phase="1">
+			<property name="completion_distance" value="50"/>
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="start_mode" value="Create"/>
+			<property name="phase" value="2"/>
+		</objective>
+
+		<action type="SpawnEnemy" id="animalCoyote" value="4-7" phase="3"/>
+		<objective type="AnimalKill" id="animalCoyote" value="3" phase="3"/>
+
+		<reward type="Exp" value="5000"/>
+		<reward type="Quest" id="challenge_mutantCoyote_3of3"/>
+	</quest>
+	
+	<quest id="challenge_mutantCoyote_3of3">
+		<property name="name_key" value="challenge_mutantCoyote3"/>
+		<property name="group_name_key" value="Mutant Coyote Bounty"/>
+		<property name="subtitle_key" value="challenge_mutantCoyote_subtitle"/>
+		<property name="description_key" value="challenge_mutantCoyote_offer"/>
+		<property name="icon" value="ui_game_symbol_zombie"/>
+		<property name="repeatable" value="true"/>
+		<property name="category_key" value="challenge"/>
+		<property name="offer_key" value="challenge_mutantCoyote_offer"/>
+		<property name="difficulty" value="insane"/>
+		<property name="completiontype" value="TurnIn"/>
+		<property name="shareable" value="false"/>
+
+		<objective type="RandomGoto" value="100-300" phase="1">
+			<property name="completion_distance" value="50"/>
+		</objective>
+
+		<objective type="RallyPoint">
+			<property name="start_mode" value="Create"/>
+			<property name="phase" value="2"/>
+		</objective>
+
+		<action type="SpawnEnemy" id="animalCoyote" value="5-9" phase="3"/>
+		<objective type="AnimalKill" id="animalCoyote" value="5" phase="3"/>
+
+		<objective type="InteractWithNPC">
+			<property name="phase" value="4"/>
+		</objective>
+
+		<reward type="Exp" value="5000"/>
+		<reward type="Item" id="MutantCoyoteParts" value="1"/>
+		<reward type="LootItem" id="groupQuestTools" ischosen="true" isfixed="true" value="7"/>
+		<reward type="LootItem" id="groupQuestMedical" ischosen="true" isfixed="true" value="7"/>
+		<reward type="LootItem" id="groupQuestAmmo" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestMelee,groupQuestRanged,groupQuestArmor" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestSchematics" ischosen="true" value="7"/>
+		<reward type="LootItem" id="groupQuestMods" ischosen="true" value="7"/>
+	</quest>
+	
+	</insertAfter>
+	
+	<append xpath="/quests/quest_list[@id='trader_quests']">
+		<quest id="tier5_buried_military_secrets" />
+	</append>
+
+	<append xpath="/quests/quest_items">
+		<quest_item id="24" name="Electronic Gadget" icon="controlPanelTop02" icon_color="255,255,255"/>
+		<quest_item id="25" name="Sealed Biohazard Container" icon="cntBarrelAcidSingle00" icon_color="255,255,255"/>
+	</append>
+</configs>

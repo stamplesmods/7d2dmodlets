@@ -1,0 +1,3 @@
+<configs>
+<append xpath="/blocks/block[@name='cntLootChestHero']/property[@name='Tags']/@value">,safes</append>
+</configs>

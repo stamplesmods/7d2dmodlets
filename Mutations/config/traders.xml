@@ -1,0 +1,30 @@
+<configs>
+
+<append xpath="/traders/trader_item_groups">
+		<trader_item_group name='rumorQuests'>
+			<item name="qc_challenge_mutantBear" count="1"/>
+			<item name="qc_challenge_mutantBoar" count="1"/>
+			<item name="qc_challenge_mutantDireWolf" count="1"/>
+			<item name="qc_challenge_mutantCat" count="1"/>
+			<item name="qc_challenge_mutantCoyote" count="1"/>
+		</trader_item_group>
+</append>
+
+<append xpath="/traders/trader_info[@id='1']/tier_items[@level='1,499']">
+	<item group="rumorQuests" count="1"/>
+</append>
+
+<append xpath="/traders/trader_info[@id='1']/tier_items[@level='3000,3999']">
+	<item group="rumorQuests" count="1"/>
+</append>
+
+<append xpath="/traders/trader_info[@id='1']/tier_items[@level='4000,4999']">
+	<item group="rumorQuests" count="1,2"/>
+</append>
+
+<append xpath="/traders/trader_info[@id='1']/tier_items[@level='5000,-1']">
+	<item group="rumorQuests" count="2,3"/>
+</append>
+</configs>
+
+

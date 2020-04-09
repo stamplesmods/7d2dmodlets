@@ -1,0 +1,25 @@
+<configs>
+<insertAfter xpath="/buffs/buff[@name='buffPerkPummelPeteBonus']" > <!-- Berserker -->
+
+
+	<buff name="buffBerserker" name_key="buffBerserkerName" description_key="buffBerserkerDesc" showonhud="true" icon="ui_game_symbol_bull" icon_color="0,255,0">
+		<duration value="10"/>
+		<stack_type value="replace"/>
+		
+		<effect_group>
+			<passive_effect name="RunSpeed" operation="perc_add" value=".1"/>
+		</effect_group>
+
+		<effect_group> <!-- Heal on dismemberment -->
+			<requirement name="ItemHasTags" tags="melee,shotgun"/>
+			<triggered_effect trigger="onDismember" action="ModifyStats" stat="Health" operation="add" value="5"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="ItemHasTags" tags="melee,shotgun"/>
+			<passive_effect name="EntityDamage" operation="perc_add" level="1" value=".3"/>
+		</effect_group>
+	</buff>
+
+</insertAfter>
+</configs>
