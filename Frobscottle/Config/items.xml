@@ -14,8 +14,6 @@
 	<effect_group tiered="false">
 			<display_value name="dDuration" value="63"/>
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffFrobscottleDuration" operation="add" value="63"/>
-			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffFrobscottleDuration" operation="set" value="63">
-				<requirement name="CVarCompare" cvar="$buffFrobscottleDuration" operation="GT" value="63"/></triggered_effect>
 			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables,buffFrobscottle"/>
 	</effect_group>
 
