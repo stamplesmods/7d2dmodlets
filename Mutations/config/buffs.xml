@@ -12,7 +12,7 @@
 
 		<effect_group> <!-- Heal on dismemberment -->
 			<requirement name="ItemHasTags" tags="melee,shotgun"/>
-			<triggered_effect trigger="onDismember" action="ModifyStats" stat="Health" operation="add" value="5"/>
+			<triggered_effect trigger="onDismember" action="ModifyStats" stat="Health" operation="add" value="3"/>
 		</effect_group>
 
 		<effect_group>

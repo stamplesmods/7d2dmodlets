@@ -47,27 +47,6 @@
 			<property name="phase" value="4"/>
 		</objective>
 
-<!--
-		<objective type="TreasureChest">
-			<property name="block" value="cntBuriedWeaponChest"/>
-			<property name="distance" value="500-750"/>
-			<property name="default_radius" value="7"/>
-			<property name="container_type" value="Supplies"/>
-		</objective>
-
-		<objective type="FetchFromTreasure">
-			<property name="block" value="cntBuriedWeaponChest"/>
-			<property name="quest_item_ID" value="25"/>
-			<property name="item_count" value="1"/>
-		</objective>
-
-		<action type="SpawnEnemy" id="zombieSoldierFeral,zombieSoldierRadiated" value="4-7" phase="2"/>
-
-		<objective type="InteractWithNPC">
-			<property name="phase" value="2"/>
-		</objective>
--->
-
 		<reward type="Exp" value="15000"/>
 		<reward type="Item" id="resourceMutagen" value="1" />
 		<reward type="LootItem" id="groupQuestTools" ischosen="true" value="7"/>
@@ -100,6 +79,10 @@
 			<property name="distance" value="500-750"/>
 			<property name="default_radius" value="12"/>
 			<property name="container_type" value="Supplies"/>
+			<property name="nav_object" value="treasure" />
+			<property name="direct_nav_object" value="treasure_direct" />
+			<property name="blocks_per_reduction" value="10" />
+			<property name="radius_reduction_sound" value="ui_radius_shrink" />
 		</objective>
 
 		<objective type="FetchFromTreasure">
@@ -112,10 +95,12 @@
 
 		<objective type="ReturnToNPC">
 			<property name="phase" value="2"/>
+			<property name="nav_object" value="return_to_trader" />
 		</objective>
 
 		<objective type="InteractWithNPC">
 			<property name="phase" value="2"/>
+			<property name="nav_object" value="return_to_trader" />
 		</objective>
 
 		<reward type="Exp" value="5000"/>

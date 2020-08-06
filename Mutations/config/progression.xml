@@ -21,7 +21,7 @@
 	</attribute>
 </insertAfter>
 
-<insertAfter xpath="/progression/skills/skill[@name='skillCraftsmanship']" > <!-- Fauna Mutations -->
+<insertAfter xpath="/progression/skills/skill[@name='skillIntellectCraftsmanship']" > <!-- Fauna Mutations -->
 	<skill name="skillFaunaMutations" parent="attMutations" name_key="skillFaunaMutationsName" desc_key="skillFaunaMutationsDesc" long_desc_key="skillFaunaMutationsLongDesc" icon="ui_game_symbol_animal_tracker"><effect_group/></skill>
 </insertAfter>
 

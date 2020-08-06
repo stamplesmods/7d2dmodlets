@@ -42,7 +42,7 @@
 
 <item name="bookUnnaturalSpeed"> 
 	<property name="Extends" value="schematicMaster"/>
-	<property name="CustomIcon" value="medicalBloodDrawKit"/>
+	<property name="CustomIcon" value="resourcePaint"/>
 	<property name="DescriptionKey" value="bookUnnaturalSpeedDesc"/>
 	<property name="CustomIconTint" value="50,222,31"/> <!-- green -->
 	<property name="Stacknumber" value="20"/>
