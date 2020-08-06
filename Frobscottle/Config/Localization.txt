@@ -1,0 +1,6 @@
+Key,Source,Context,Changes,English,French,German,Klingon,Spanish,Polish
+buffFrobscottleDesc,buffs,Buff,New,You get there faster while carrying more.\n\nIt's the sugar-buzz that gets you done sooner!,,,,,
+buffFrobscottleName,buffs,Buff,New,Frobscottle,,,,,
+buffFrobscottleTooltip,buffs,Buff,New,"Whoo, that's... gaseous.",,,,,
+drinkFrobscottle,items,Food,New,Frobscottle,,,,,
+drinkFrobscottleDesc,items,Food,EnChanged,The fizzy green drink that bubbles downward!  Provides a boost to your jump height.,,,,,

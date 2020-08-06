@@ -1,0 +1,15 @@
+<configs>
+<append xpath="/ui_display_info">
+
+<item_display>
+
+		<item_display_info display_type="Frobscottle" display_group="groupConsumables">
+			<display_entry name="$waterAmountAdd" title_key="statWaterAmount"/>
+			<display_entry name="Jump Stamina Loss" title_key="Jump Stamina Loss" display_type="Percent"/>
+			<display_entry name="Jump Height" title_key="statJumpStrength" display_leading_plus="true"/>
+			<display_entry name="dDuration" title_key="statDuration" display_type="Time"/>
+		</item_display_info>
+
+</item_display>
+</append>
+</configs>

@@ -1,7 +1,7 @@
 <configs>
 <append xpath="/recipes">
 
-	<recipe name="Frobscottle" count="1" craft_area="chemistryStation">
+	<recipe name="drinkFrobscottle" count="1" craft_area="chemistryStation">
 		<ingredient name="drinkJarRiverWater" count="1"/>
 		<ingredient name="resourceCropAloeLeaf" count="2"/>
 		<ingredient name="resourcePotassiumNitratePowder" count="5"/> 
