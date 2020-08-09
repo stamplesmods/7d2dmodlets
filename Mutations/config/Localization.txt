@@ -12,7 +12,7 @@ perkUnnaturalSpeedRank1LongDesc,progression,Perk,,,"Your jump is increased by 2 
 perkPyrokinesisDesc,progression,Perk,,,"You have developed psychic powers that allow you to turn your enemies into external combustion engines.  Catch things on fire... with your mind!"
 perkPyrokinesisName,progression,Perk,,,Pyrokinesis
 perkPyrokinesisRank1Desc,progression,Perk,,,Firepower
-perkPyrokinesisRank1LongDesc,progression,Perk,,,"Your power attack with your bare hands will knock down enemies from a short distance away, as well as causing spotaneous combustion."
+perkPyrokinesisRank1LongDesc,progression,Perk,,,"Channeling your thoughts through a pyrofocus allows you to create an explosion in your enemy's bodies, blasting them backward and causing spotaneous combustion. Works up to 10m away."
 perkZanshinDesc,progression,Perk,,,"You have become completely attuned to your environment.  Your sense are so heightened that you are able to shoot between the cracks in your enemies' armor, and put a bullet through locks on doors and safes."
 perkZanshinName,progression,Perk,,,Zanshin
 perkZanshinRank1Desc,progression,Perk,,,Oneness
@@ -106,5 +106,7 @@ quest_MilitarySecrets,Quest,Quest Info,,,"Military Secrets"
 quest_PowerHomingBeacon,Quest,Quest Info,,,"Power the Homing Device"
 quest_PowerHomingBeacon_description,Quest,Quest Info,,,"Find a battery, and power the device."
 quest_PowerHomingBeacon_subtitle,Quest,Quest Info,,,"Insert a Battery"
+meleePyrofocus,items,perk book,,,"Pyrofocus"
+meleePyrofocusDesc,items,perk book,,,"A powerful channeling device for creating spontaneous combusion effects at a heavy stamina cost.\n\nRequires: Pyrokinesis Mutation"
 
 

@@ -352,6 +352,60 @@
 	</property>
 </item>
 
+<item name="meleePyrofocus">
+	<property name="Tags" value="melee,grunting,light,attIntellect,perkPyrokinesis,longShaft"/>
+	<property name="Material" value="MresourceRockSmall"/>
+	<property name="Meshfile" value="#Other/Items?Crafting/rock_smallPrefab.prefab"/>
+	<property name="CustomIcon" value="resourceClayLump"/> <property name="CustomIconTint" value="140,34,5"/>
+	<property name="HoldType" value="13"/>
+	<property name="RepairTools" value="MresourceRockSmall"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="SoundJammed" value="ItemNeedsRepair"/>
+	<property name="SoundDestroy" value="metaldestroy1"/>
+	<property name="DisplayType" value="melee"/>
+	<property name="Canhold" value="true"/>
+	<!-- <property name="FuelValue" value="0"/> -->
+	<property name="EconomicValue" value="0"/>
+	<property name="Group" value="Ammo/Weapons"/>
+	<property name="ShowQuality" value="false"/>
+
+	<property class="Action0">
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sphere" value=".15"/>   <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+
+		<property name="UseGrazingHits" value="true"/>
+		<property name="GrazeStart" value=".35"/>
+		<property name="GrazeEnd" value=".4"/>
+		<property name="SwingDegrees" value="30"/>
+		<property name="SwingAngle" value="90"/>
+		
+		<property name="Sound_start" value="torch_swoosh"/>
+	</property>
+	<property class="Action1"> 	
+	
+		<property name="Class" value="DynamicMelee"/>
+		<property name="Sphere" value=".15"/> 
+
+		<property name="UseGrazingHits" value="true"/>
+		<property name="GrazeStart" value=".35"/>
+		<property name="GrazeEnd" value=".4"/>
+		<property name="SwingDegrees" value="30"/>
+		<property name="SwingAngle" value="90"/>
+		
+	</property>
+	<effect_group name="meleeWpnPyroFocus">
+		<passive_effect name="EntityDamage" operation="base_set" value="10"/>
+		<passive_effect name="BlockDamage" operation="base_set" value="10"/>
+		<passive_effect name="AttacksPerMinute" operation="base_set" value="100"/>
+		<passive_effect name="StaminaLoss" operation="base_set" value="50"/>
+		<passive_effect name="DegradationMax" operation="base_set" value="300" tier="1"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="1"/>
+		<passive_effect name="MaxRange" operation="base_set" value="2.0"/>
+		<passive_effect name="BlockRange" operation="base_set" value="3"/>
+	</effect_group>
+
+</item>
+
 </insertAfter>
 </configs>
 

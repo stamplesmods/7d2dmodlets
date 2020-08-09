@@ -31,49 +31,48 @@
 			<requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="10" desc_key="reqIntellectLevel10"/>
 		</level_requirements>
 		
+		<effect_group name="PyrofocusRecipe" tiered="false">
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="meleePyrofocus"/>
+		</effect_group>
+		
 		<effect_group name="pyro abilities" tiered="false">
 			<requirement name="ItemHasTags" tags="perkPyrokinesis"/>
 			<requirement name="ProgressionLevel" progression_name="perkPyrokinesis" operation="GTE" value="1"/>
-			<passive_effect name="MaxRange" operation="perc_add" level="1" value="2" tags="secondary"/>
-			<passive_effect name="EntityDamage" operation="perc_add" level="1" value="3" tags="secondary"/>
+			<passive_effect name="MaxRange" operation="base_set" level="1" value="10"/>
+<!-- 			<passive_effect name="EntityDamage" operation="base_set" level="1" value="3"/> -->
 			<effect_description level="1" desc_key="perkPyrokinesisRank1Desc" long_desc_key="perkPyrokinesisRank1LongDesc"/>
 		</effect_group>
 
 		<effect_group name="pyroKnockdown" tiered="false">
-			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryKnockdown01"> 
+			<triggered_effect trigger="onSelfAttackedOther" action="Ragdoll" target="other" duration="3" force="400">
 				<requirement name="ItemHasTags" tags="perkPyrokinesis"/>
 				<requirement name="ProgressionLevel" progression_name="perkPyrokinesis" operation="GTE" value="1"/>
 				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="100"/>
 			</triggered_effect>
-			<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" buff="buffInjuryKnockdown01"> 
+			<triggered_effect trigger="onSelfAttackedOther" action="Ragdoll" target="other" duration="3" force="400">
 				<requirement name="ItemHasTags" tags="perkPyrokinesis"/>
 				<requirement name="ProgressionLevel" progression_name="perkPyrokinesis" operation="GTE" value="1"/>
 				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="100"/>
 			</triggered_effect>
 			
 		</effect_group>
-		
+	
 		<effect_group name="new Pyro Fire" tiered="false">
 			<requirement name="ItemHasTags" tags="perkPyrokinesis"/>
 			<requirement name="ProgressionLevel" progression_name="perkPyrokinesis" operation="GTE" value="1"/>
 			<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".93"/>
 			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="100"/>
-			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffBurningElement" tags="secondary"/> 
-			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar="$buffBurningElementDuration" operation="set" value="10" tags="secondary"></triggered_effect>
-			<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" buff="buffBurningElement" tags="secondary"/> 
-			<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="ModifyCVar" target="other" cvar="$buffBurningElementDuration" operation="set" value="10" tags="secondary"></triggered_effect>
-
+			<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffBurningMolotov"/> 
+			<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$buffBurningMolotovDuration" operation="set" value="10"></triggered_effect>
 		</effect_group>
 
 		<effect_group name="always refresh existing Pyro Fire" tiered="false">
 			<requirement name="ItemHasTags" tags="perkPyrokinesis"/>
 			<requirement name="ProgressionLevel" progression_name="perkPyrokinesis" operation="GTE" value="1"/>
 			<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".93"/>
-			<requirement name="HasBuff" target="other" buff="buffBurningElement"/>
-			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffBurningElement" tags="secondary"/> 
-			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="ModifyCVar" target="other" cvar="$buffBurningElementDuration" operation="set" value="10" tags="secondary"></triggered_effect>
-			<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="AddBuff" target="other" buff="buffBurningElement" tags="secondary"/> 
-			<triggered_effect trigger="onSelfSecondaryActionGrazeHit" action="ModifyCVar" target="other" cvar="$buffBurningElementDuration" operation="set" value="10" tags="secondary"></triggered_effect>
+			<requirement name="HasBuff" target="other" buff="buffBurningMolotov"/>
+			<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffBurningMolotov"/> 
+			<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$buffBurningMolotovDuration" operation="set" value="10"></triggered_effect>
 		</effect_group>
 	</perk>
 </insertAfter>
