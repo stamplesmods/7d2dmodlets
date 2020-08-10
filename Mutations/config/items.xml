@@ -1,6 +1,4 @@
 <configs>
-<append xpath="/items/item[@name='meleeHandPlayer']/property[@name='Tags']/@value">,perkPyrokinesis</append>
-<setattribute xpath="/items/item[@name='meleeHandPlayer']/effect_group[@name='Power Attack']" name="tags">secondary</setattribute>
 <insertAfter xpath="/items/item[@name='resourceSteelPolish']">
 
 <item name="bookPyrokinesis"> 
