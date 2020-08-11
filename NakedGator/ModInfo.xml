@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="NakedGator" />
+		<Description value="This modlet adds the Naked Gator drink to the game.  It can be crafted using Mega Crush." />
+		<Author value="stample" />
+		<Version value="1.0.0" />
+	</ModInfo>
+</xml>

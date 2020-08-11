@@ -1,0 +1,13 @@
+<configs>
+<append xpath="/recipes">
+
+	<recipe name="drinkNakedGator" count="1" craft_area="chemistryStation">
+		<ingredient name="drinkCanMegaCrush" count="1"/>
+		<ingredient name="drinkJarBeer" count="1"/> 
+		<ingredient name="resourceBrokenGlass" count="1"/>
+		<ingredient name="resourceYuccaFibers" count="3"/> 
+	</recipe>
+
+</append>
+
+</configs>

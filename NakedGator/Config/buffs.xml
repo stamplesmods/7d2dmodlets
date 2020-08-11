@@ -1,0 +1,62 @@
+<configs>
+<append xpath="/buffs">
+	<buff name="buffNakedGator" name_key="buffNakedGatorName" description_key="buffNakedGatorDesc" tooltip_key="buffNakedGatorTooltip" icon="ui_game_symbol_beer" icon_color="0,255,0">
+		<stack_type value="replace"/><duration value="0"/>
+		<display_value value=".buffNakedGatorDisplay"/><display_value_format value="time"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffNakedGatorDuration" operation="subtract" value="@$MetabolismDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffNakedGatorDisplay" operation="set" value="@$buffNakedGatorDuration"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".buffNakedGatorDisplay" operation="divide" value="@$MetabolismDuration"/>
+ 			<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity=".5" fade="2" effect_name="Drunk"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" fade="20" effect_name="Drunk"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="CVarCompare" cvar="$buffNakedGatorDuration" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffNakedGatorDisplay" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffNakedGatorDuration" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffNakedGator"/>
+		</effect_group>
+		
+		<effect_group> <!-- Only be drunk for the first 6 seconds, then fade over the next several seconds.  Gone in about 12 seconds -->
+			<requirement name="CVarCompare" cvar="$buffNakedGatorDuration" operation="LTE" value="1194"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyScreenEffect" intensity="0" fade="20" effect_name="Drunk"/>
+		</effect_group>
+
+		<effect_group>
+			<passive_effect name="RunSpeed" operation="perc_add" value=".2"/>
+		</effect_group>
+		
+		<effect_group>
+			<passive_effect name="FoodLossPerStaminaPointGained" operation="perc_add" value="-.15"/>
+			<passive_effect name="WaterLossPerStaminaPointGained" operation="perc_add" value="-.15"/>
+		</effect_group>
+		
+		<effect_group name="gatorbite" tiered="false">
+			<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryBleedingBarbedWire">
+				<requirement name="HoldingItemHasTags" tags="melee"/>
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="50"/>
+			</triggered_effect>
+		</effect_group>
+	</buff>
+ 
+
+ 
+ 	<buff name="buffGatorBuzz" name_key="buffDrunk01Name" description_key="buffDrunk01Desc" tooltip_key="" icon="ui_game_symbol_beer">
+		<damage_type value="disease"/>
+		<stack_type value="replace"/><duration value="0"/>
+		<display_value value=".buffGatorBuzzDisplay"/><display_value_format value="time"/>
+
+		<effect_group>
+			<requirement name="CVarCompare" cvar="$buffGatorBuzzDuration" operation="LTE" value="0"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffGatorBuzzDisplay" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffGatorBuzzDuration" operation="set" value="0"/>
+				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffGatorBuzz"/>
+				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" effect_name="Drunk"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" effect_name="Drunk"/>
+		</effect_group>
+
+	</buff>
+	
+</append>
+</configs>

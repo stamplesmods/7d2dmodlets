@@ -1,0 +1,31 @@
+<configs>
+<append xpath="/items">
+
+<item name="drinkNakedGator">
+	<property name="Extends" value="drinkJarRedTea"/>
+	<property name="DisplayType" value="NakedGator"/>
+	<property name="EconomicValue" value="150"/>
+	<property name="CustomIcon" value="drinkCanMegaCrush"/>
+	<property name="CustomIconTint" value="20,200,35"/>
+	<property class="Action0">
+		<property name="Create_item" value="drinkCanEmpty"/>
+	</property>
+
+	<effect_group tiered="false">
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
+			<display_value name="dDuration" value="1200"/>
+			<display_value name="dEfficientDigestion" value=".15"/>
+			<display_value name="dRunSpeed" value=".2"/>
+			<display_value name="dBuffString" value=".5"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffNakedGatorDuration" operation="add" value="1200"/>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffNakedGatorDuration" operation="set" value="1200">
+				<requirement name="CVarCompare" cvar="$buffNakedGatorDuration" operation="GT" value="1200"/></triggered_effect>
+			<!-- <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffGatorBuzzDuration" operation="add" value="6"/> -->
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables,buffNakedGator"/>
+			<!-- <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables,buffGatorBuzz"/> -->
+	</effect_group>
+
+</item>
+
+</append>
+</configs>

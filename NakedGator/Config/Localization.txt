@@ -1,0 +1,6 @@
+Key,Source,Context,Changes,English,French,German,Klingon,Spanish,Polish
+buffNakedGatorDesc,buffs,Buff,New,"Grants run speed, efficient digestion, and a chance to shred your enemies",,,,,
+buffNakedGatorName,buffs,Buff,New,Naked Gator,,,,,
+buffNakedGatorTooltip,buffs,Buff,New,Let the gator loose!,,,,,
+drinkNakedGator,items,Food,New,Naked Gator,,,,,
+drinkNakedGatorDesc,items,Food,EnChanged,"It's an energy drink, it's a beer, it's... Naked Gator!\n\nShred your enemies with Naked Gator!",,,,,
