@@ -25,9 +25,6 @@
 
 		<effect_group>
 			<passive_effect name="RunSpeed" operation="perc_add" value=".2"/>
-		</effect_group>
-		
-		<effect_group>
 			<passive_effect name="FoodLossPerStaminaPointGained" operation="perc_add" value="-.15"/>
 			<passive_effect name="WaterLossPerStaminaPointGained" operation="perc_add" value="-.15"/>
 		</effect_group>
@@ -40,23 +37,5 @@
 		</effect_group>
 	</buff>
  
-
- 
- 	<buff name="buffGatorBuzz" name_key="buffDrunk01Name" description_key="buffDrunk01Desc" tooltip_key="" icon="ui_game_symbol_beer">
-		<damage_type value="disease"/>
-		<stack_type value="replace"/><duration value="0"/>
-		<display_value value=".buffGatorBuzzDisplay"/><display_value_format value="time"/>
-
-		<effect_group>
-			<requirement name="CVarCompare" cvar="$buffGatorBuzzDuration" operation="LTE" value="0"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".buffGatorBuzzDisplay" operation="set" value="0"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$buffGatorBuzzDuration" operation="set" value="0"/>
-				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffGatorBuzz"/>
-				<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="1" effect_name="Drunk"/>
-				<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" intensity="0" effect_name="Drunk"/>
-		</effect_group>
-
-	</buff>
-	
 </append>
 </configs>
