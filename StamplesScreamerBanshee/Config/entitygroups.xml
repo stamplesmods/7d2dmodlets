@@ -1,0 +1,6 @@
+<configs>
+	<append xpath="/entitygroups/entitygroup[@name='ZombieScouts']">
+		<entity name="zombieStamplesScreamerBanshee"/>
+	</append>
+</configs>
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="StamplesScreamerBanshee" />
+		<Description value="This modlet adds a screamer Banshee zombie, and puts it in the Scout group" />
+		<Author value="stample" />
+		<Version value="1.0.0" />
+	</ModInfo>
+</xml>

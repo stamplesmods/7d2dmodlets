@@ -1,0 +1,40 @@
+<configs>
+	<append xpath="/entity_classes">
+
+<entity_class name="zombieStamplesScreamerBanshee" extends="zombieScreamer">
+		<property name="Tags" value="entity,zombie,hostile,feral"/>
+		<property name="ReplaceMaterial0" value="particleeffects/models/materials/p_glass"/> 
+		<property name="ReplaceMaterial1" value="#Entities/Zombies?Zombies/Materials/feral_eye.mat"/>
+<!--		<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/> -->
+		<property name="Class" value="EntityVulture"/>
+		<property name="MoveSpeed" value=".7"/>
+		<property name="MoveSpeedAggro" value="2, 2"/>
+		<property name="MaxTurnSpeed" value="150"/>
+		<property name="SightRange" value="70"/>
+		<property name="IsAnimalEntity" value="false"/>
+ 		
+		<property name="AIGroupCircle" value="1"/>
+		<property name="AINoiseSeekDist" value="3"/>
+		<property name="AIPathCostScale" value=".15, .4"/>
+		<property name="AITask-1" value="BreakBlock"/>
+		<property name="AITask-2" value="ApproachAndAttackTarget" data="class=EntityNPC,0,EntityPlayer,0"/>
+		<property name="AITask-3" value="ApproachSpot"/>
+		<property name="AITask-4" value="Look"/>
+		<property name="AITask-5" value="Wander"/>
+		<property name="AITarget-1" value="SetAsTargetIfHurt"/>
+		<property name="AITarget-2" value="BlockIf" data="condition=alert e 0"/>
+		<property name="AITarget-3" value="BlockingTargetTask"/>
+		<property name="AITarget-4" value="SetNearestEntityAsTarget" data="class=EntityPlayer,70,70,EntityNPC,70,70"/>
+
+		<property name="HandItem" value="meleeHandZombie01"/>
+
+	<effect_group name="Base Effects">
+		<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffBansheeGlow"/>
+		<passive_effect name="HealthMax" operation="base_set" value="75"/>
+		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
+	</effect_group>
+</entity_class>
+
+	</append>
+</configs>
+

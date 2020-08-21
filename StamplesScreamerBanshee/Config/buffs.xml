@@ -1,0 +1,43 @@
+<configs>
+	<append xpath="/buffs">
+		<buff name="buffBansheeGlow" hidden="true">
+			<update_rate value="1"/>
+ 
+			<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffBansheeGlowVisible">
+				<requirement name="IsNight"/>
+				<requirement name="NotHasBuff" buff="buffBansheeGlowVisible"/>
+			</triggered_effect>
+
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffBansheeGlowVisible">
+				<requirement name="IsDay"/>
+				<requirement name="HasBuff" buff="buffBansheeGlowVisible"/>
+			</triggered_effect>
+			
+			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffBansheeGlowVisible">
+				<requirement name="HasBuff" buff="buffBansheeGlowVisible"/>
+			</triggered_effect>
+			
+			<!-- Backup removal -->
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveParticleEffectFromEntity" particle="RadiatedParticlesOnMesh">
+				<requirement name="NotHasBuff" buff="buffBansheeGlowVisible"/>
+			</triggered_effect>
+			
+			</effect_group>
+
+		</buff>
+		
+		<buff name="buffBansheeGlowVisible" hidden="true">
+			<update_rate value="1"/>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="RadiatedParticlesOnMesh" shape_mesh="true"/>
+				<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="RadiatedParticlesOnMesh"/>
+			</effect_group>
+
+
+			
+		</buff>
+		
+	</append>
+</configs>
