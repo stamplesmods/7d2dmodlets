@@ -168,7 +168,7 @@
 	<quest id="challenge_mutantBear_2of3">
 		<property name="name_key" value="challenge_mutantBear2"/>
 		<property name="group_name_key" value="Mutant Bear Bounty"/>
-		<property name="subtitle_key" value="challenge_mutantBear_subtitle"/>
+		<property name="subtitle_key" value="challenge_mutantBear_subtitle2"/>
 		<property name="description_key" value="challenge_mutantBear_offer"/>
 		<property name="icon" value="ui_game_symbol_zombie"/>
 		<property name="repeatable" value="true"/>
@@ -196,7 +196,7 @@
 	<quest id="challenge_mutantBear_3of3">
 		<property name="name_key" value="challenge_mutantBear3"/>
 		<property name="group_name_key" value="Mutant Bear Bounty"/>
-		<property name="subtitle_key" value="challenge_mutantBear_subtitle"/>
+		<property name="subtitle_key" value="challenge_mutantBear_subtitle3"/>
 		<property name="description_key" value="challenge_mutantBear_offer"/>
 		<property name="icon" value="ui_game_symbol_zombie"/>
 		<property name="repeatable" value="true"/>
@@ -204,6 +204,7 @@
 		<property name="offer_key" value="challenge_mutantBear_offer"/>
 		<property name="difficulty" value="insane"/>
 		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="challenge_mutantBear_completion"/>
 		<property name="shareable" value="false"/>
 
 		<objective type="RandomGoto" value="100-300" phase="1">
@@ -215,8 +216,10 @@
 			<property name="phase" value="2"/>
 		</objective>
 
-		<action type="SpawnEnemy" id="animalBear" value="3" phase="3"/>
-		<objective type="AnimalKill" id="animalBear" value="1" phase="3"/>
+		<action type="SpawnEnemy" id="animalBear" value="1-2" phase="3"/>
+		<action type="SpawnEnemy" id="animalMutantBear" value="1" phase="3"/>
+		<action type="SpawnEnemy" id="npcTraderJen" value="1" phase="3"/>
+		<objective type="AnimalKill" id="animalMutantBear" value="1" phase="3"/>
 
 		<objective type="InteractWithNPC">
 			<property name="phase" value="4"/>
@@ -264,7 +267,7 @@
 	<quest id="challenge_mutantBoar_2of3">
 		<property name="name_key" value="challenge_mutantBoar2"/>
 		<property name="group_name_key" value="Mutant Boar Bounty"/>
-		<property name="subtitle_key" value="challenge_mutantBoar_subtitle"/>
+		<property name="subtitle_key" value="challenge_mutantBoar_subtitle2"/>
 		<property name="description_key" value="challenge_mutantBoar_offer"/>
 		<property name="icon" value="ui_game_symbol_zombie"/>
 		<property name="repeatable" value="true"/>
@@ -292,7 +295,7 @@
 	<quest id="challenge_mutantBoar_3of3">
 		<property name="name_key" value="challenge_mutantBoar3"/>
 		<property name="group_name_key" value="Mutant Boar Bounty"/>
-		<property name="subtitle_key" value="challenge_mutantBoar_subtitle"/>
+		<property name="subtitle_key" value="challenge_mutantBoar_subtitle3"/>
 		<property name="description_key" value="challenge_mutantBoar_offer"/>
 		<property name="icon" value="ui_game_symbol_zombie"/>
 		<property name="repeatable" value="true"/>
@@ -300,6 +303,7 @@
 		<property name="offer_key" value="challenge_mutantBoar_offer"/>
 		<property name="difficulty" value="insane"/>
 		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="challenge_mutantBoar_completion"/>
 		<property name="shareable" value="false"/>
 
 		<objective type="RandomGoto" value="100-300" phase="1">
@@ -312,8 +316,9 @@
 		</objective>
 
 		<action type="SpawnEnemy" id="animalBoar" value="3-5" phase="3"/>
-		<action type="SpawnEnemy" id="animalBossGrace" value="1" phase="3"/>
-		<objective type="AnimalKill" id="animalBossGrace" value="1" phase="3"/>
+		<action type="SpawnEnemy" id="animalMutantBoar" value="1" phase="3"/>
+		<action type="SpawnEnemy" id="npcTraderJoel" value="1" phase="3"/>
+		<objective type="AnimalKill" id="animalMutantBoar" value="1" phase="3"/>
 
 		<objective type="InteractWithNPC">
 			<property name="phase" value="4"/>
@@ -361,7 +366,7 @@
 	<quest id="challenge_mutantDireWolf_2of3">
 		<property name="name_key" value="challenge_mutantDireWolf2"/>
 		<property name="group_name_key" value="Mutant Dire Wolf Bounty"/>
-		<property name="subtitle_key" value="challenge_mutantDireWolf_subtitle"/>
+		<property name="subtitle_key" value="challenge_mutantDireWolf_subtitle2"/>
 		<property name="description_key" value="challenge_mutantDireWolf_offer"/>
 		<property name="icon" value="ui_game_symbol_zombie"/>
 		<property name="repeatable" value="true"/>
@@ -389,7 +394,7 @@
 	<quest id="challenge_mutantDireWolf_3of3">
 		<property name="name_key" value="challenge_mutantDireWolf3"/>
 		<property name="group_name_key" value="Mutant Dire Wolf Bounty"/>
-		<property name="subtitle_key" value="challenge_mutantDireWolf_subtitle"/>
+		<property name="subtitle_key" value="challenge_mutantDireWolf_subtitle3"/>
 		<property name="description_key" value="challenge_mutantDireWolf_offer"/>
 		<property name="icon" value="ui_game_symbol_zombie"/>
 		<property name="repeatable" value="true"/>
@@ -397,6 +402,7 @@
 		<property name="offer_key" value="challenge_mutantDireWolf_offer"/>
 		<property name="difficulty" value="insane"/>
 		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="challenge_mutantDireWolf_completion"/>
 		<property name="shareable" value="false"/>
 
 		<objective type="RandomGoto" value="100-300" phase="1">
@@ -409,8 +415,9 @@
 		</objective>
 
 		<action type="SpawnEnemy" id="animalWolf" value="3-5" phase="3"/>
-		<action type="SpawnEnemy" id="animalDireWolf" value="1" phase="3"/>
-		<objective type="AnimalKill" id="animalDireWolf" value="1" phase="3"/>
+		<action type="SpawnEnemy" id="animalMutantWolf" value="1" phase="3"/>
+		<action type="SpawnEnemy" id="npcTraderBob" value="1" phase="3"/>
+		<objective type="AnimalKill" id="animalMutantWolf" value="1" phase="3"/>
 
 		<objective type="InteractWithNPC">
 			<property name="phase" value="4"/>
@@ -458,7 +465,7 @@
 	<quest id="challenge_mutantCat_2of3">
 		<property name="name_key" value="challenge_mutantCat2"/>
 		<property name="group_name_key" value="Mutant Cat Bounty"/>
-		<property name="subtitle_key" value="challenge_mutantCat_subtitle"/>
+		<property name="subtitle_key" value="challenge_mutantCat_subtitle2"/>
 		<property name="description_key" value="challenge_mutantCat_offer"/>
 		<property name="icon" value="ui_game_symbol_zombie"/>
 		<property name="repeatable" value="true"/>
@@ -486,7 +493,7 @@
 	<quest id="challenge_mutantCat_3of3">
 		<property name="name_key" value="challenge_mutantCat3"/>
 		<property name="group_name_key" value="Mutant Cat Bounty"/>
-		<property name="subtitle_key" value="challenge_mutantCat_subtitle"/>
+		<property name="subtitle_key" value="challenge_mutantCat_subtitle3"/>
 		<property name="description_key" value="challenge_mutantCat_offer"/>
 		<property name="icon" value="ui_game_symbol_zombie"/>
 		<property name="repeatable" value="true"/>
@@ -494,6 +501,7 @@
 		<property name="offer_key" value="challenge_mutantCat_offer"/>
 		<property name="difficulty" value="insane"/>
 		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="challenge_mutantCat_completion"/>
 		<property name="shareable" value="false"/>
 
 		<objective type="RandomGoto" value="100-300" phase="1">
@@ -506,7 +514,9 @@
 		</objective>
 
 		<action type="SpawnEnemy" id="animalMountainLion" value="2-4" phase="3"/>
-		<objective type="AnimalKill" id="animalMountainLion" value="1" phase="3"/>
+		<action type="SpawnEnemy" id="animalMutantCat" value="1" phase="3"/>
+		<action type="SpawnEnemy" id="npcTraderHugh" value="1" phase="3"/>
+		<objective type="AnimalKill" id="animalMutantCat" value="1" phase="3"/>
 
 		<objective type="InteractWithNPC">
 			<property name="phase" value="4"/>
@@ -554,7 +564,7 @@
 	<quest id="challenge_mutantCoyote_2of3">
 		<property name="name_key" value="challenge_mutantCoyote2"/>
 		<property name="group_name_key" value="Mutant Coyote Bounty"/>
-		<property name="subtitle_key" value="challenge_mutantCoyote_subtitle"/>
+		<property name="subtitle_key" value="challenge_mutantCoyote_subtitle2"/>
 		<property name="description_key" value="challenge_mutantCoyote_offer"/>
 		<property name="icon" value="ui_game_symbol_zombie"/>
 		<property name="repeatable" value="true"/>
@@ -582,7 +592,7 @@
 	<quest id="challenge_mutantCoyote_3of3">
 		<property name="name_key" value="challenge_mutantCoyote3"/>
 		<property name="group_name_key" value="Mutant Coyote Bounty"/>
-		<property name="subtitle_key" value="challenge_mutantCoyote_subtitle"/>
+		<property name="subtitle_key" value="challenge_mutantCoyote_subtitle3"/>
 		<property name="description_key" value="challenge_mutantCoyote_offer"/>
 		<property name="icon" value="ui_game_symbol_zombie"/>
 		<property name="repeatable" value="true"/>
@@ -590,6 +600,7 @@
 		<property name="offer_key" value="challenge_mutantCoyote_offer"/>
 		<property name="difficulty" value="insane"/>
 		<property name="completiontype" value="TurnIn"/>
+		<property name="completion_key" value="challenge_mutantCoyote_completion"/>
 		<property name="shareable" value="false"/>
 
 		<objective type="RandomGoto" value="100-300" phase="1">
@@ -602,7 +613,9 @@
 		</objective>
 
 		<action type="SpawnEnemy" id="animalCoyote" value="5-9" phase="3"/>
-		<objective type="AnimalKill" id="animalCoyote" value="5" phase="3"/>
+		<action type="SpawnEnemy" id="animalMutantCoyote" value="1" phase="3"/>
+		<action type="SpawnEnemy" id="npcTraderRekt" value="1" phase="3"/>
+		<objective type="AnimalKill" id="animalMutantCoyote" value="1" phase="3"/>
 
 		<objective type="InteractWithNPC">
 			<property name="phase" value="4"/>

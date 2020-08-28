@@ -1,0 +1,75 @@
+<configs>
+	<append xpath="/entity_classes">
+
+	<entity_class name="animalMutantCoyote" extends="animalCoyote">
+		<property name="Mass" value="120"/>
+		<property name="SizeScale" value="1.5"/>
+		<property name="ExperienceGain" value="1000"/>
+		<property name="DeadBodyHitPoints" value="200"/>
+		<property name="HasRagdoll" value="false"/>
+		<property name="HandItem" value="meleeHandAnimalMutantCoyote"/>
+		<effect_group name="Base Effects">
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffMutantCoyoteFireAura"/>
+			<passive_effect name="HealthMax" operation="base_set" value="1000"/>
+			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
+		</effect_group>
+	</entity_class>
+
+	<entity_class name="animalMutantBear" extends="animalBear">
+		<property name="Mass" value="800"/>
+		<property name="SizeScale" value="1.5"/>
+		<property name="ExperienceGain" value="3000"/>
+		<property name="DeadBodyHitPoints" value="400"/>
+		<property name="HasRagdoll" value="false"/>
+		<effect_group name="Base Effects">
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffMutantBearDeco"/>
+			<passive_effect name="HealthMax" operation="base_set" value="2400"/>
+			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
+		</effect_group>
+	</entity_class>
+
+	<entity_class name="animalMutantCat" extends="animalMountainLion">
+		<property name="Mass" value="200"/>
+		<property name="SizeScale" value="1.5"/>
+		<property name="ExperienceGain" value="2000"/>
+		<property name="DeadBodyHitPoints" value="400"/>
+		<property name="HasRagdoll" value="false"/>
+		<effect_group name="Base Effects">
+			<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffMutantCatDeco"/>
+			<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
+		</effect_group>
+	</entity_class>
+	
+	<entity_class name="animalMutantBoar" extends="animalBoar">
+		<property name="Mass" value="200"/>
+		<property name="SizeScale" value="2"/>
+		<property name="ExperienceGain" value="2000"/>
+		<property name="DeadBodyHitPoints" value="400"/>
+		<property name="HasRagdoll" value="false"/>
+		<property name="ReplaceMaterial0" value="entities/animals/vulture/materials/vulture_v2"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="2500"/>
+			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
+		</effect_group>
+	</entity_class>
+	
+	<entity_class name="animalMutantWolf" extends="animalDireWolf">
+		<property name="Mass" value="175"/>
+		<property name="SizeScale" value="2"/>
+		<property name="ExperienceGain" value="2000"/>
+		<property name="DeadBodyHitPoints" value="400"/>
+		<property name="HasRagdoll" value="false"/>
+		<property name="ReplaceMaterial1" value="#Entities/Zombies?Zombies/Materials/rad_eye.mat"/>
+		<property name="ReplaceMaterial0" value="materials/waterinbucket"/>
+		<property name="HandItem" value="meleeHandAnimalMutantWolf"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="2000"/>
+			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
+		</effect_group>
+	</entity_class>
+	
+	</append>
+
+</configs>
+

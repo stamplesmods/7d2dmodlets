@@ -401,7 +401,44 @@
 		<passive_effect name="MaxRange" operation="base_set" value="2.0"/>
 		<passive_effect name="BlockRange" operation="base_set" value="3"/>
 	</effect_group>
+</item>
 
+<item name="meleeHandAnimalMutantWolf">
+	<property name="Extends" value="meleeHandMaster"/>
+	<property name="CreativeMode" value="None"/>
+	<property name="HoldType" value="46"/>
+	<property class="Action0">
+		<property name="Delay" value="1.5"/> <!-- obsolete if rounds per minute exists -->
+		<property name="Range" value="3.6"/>
+		<property name="Sphere" value=".3"/>
+		<property name="DamageEntity" value="20"/>
+		<property name="DamageBlock" value="20"/>
+	</property>
+	<effect_group name="meleeHandAnimalMutantWolf" tiered="false">
+		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+		<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="40"/>  A16 1.5 -->
+		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+			buff="buffMutantWolfBite1,buffMutantWolfBite2,buffMutantWolfBite3,buffMutantWolfBite4"
+			weights=".25,.25,.25,.25"/>
+	</effect_group>
+</item>
+
+<item name="meleeHandAnimalMutantCoyote">
+	<property name="Extends" value="meleeHandMaster"/>
+	<property name="CreativeMode" value="None"/>
+	<property name="HoldType" value="46"/>
+	<property class="Action0">
+		<property name="Delay" value="1.5"/> <!-- obsolete if rounds per minute exists -->
+		<property name="Range" value="3.6"/>
+		<property name="Sphere" value=".3"/>
+		<property name="DamageEntity" value="10"/>
+		<property name="DamageBlock" value="30"/>
+	</property>
+	<effect_group name="meleeHandAnimalMutantWolf" tiered="false">
+		<passive_effect name="ModSlots" operation="base_set" value="0"/>
+		<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="40"/>  A16 1.5 -->
+		<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffBurningElement"/>
+	</effect_group>
 </item>
 
 </insertAfter>

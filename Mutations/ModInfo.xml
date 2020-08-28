@@ -2,8 +2,8 @@
 <xml>
 	<ModInfo>
 		<Name value="Mutations" />
-		<Description value="This modlet adds powerful mutation perks for characters with 10 in any attribute" />
+		<Description value="This modlet adds powerful mutation perks for characters with 10 in any attribute.  A19 compatible." />
 		<Author value="stample, stamplesmods@gmail.com" />
-		<Version value="1.0.0" />
+		<Version value="2.1.0" />
 	</ModInfo>
 </xml>
