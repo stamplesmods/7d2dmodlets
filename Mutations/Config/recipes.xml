@@ -1,0 +1,59 @@
+<configs>
+<append xpath="/recipes">
+
+	<recipe name="bookPyrokinesis" count="1" craft_area="chemistryStation">
+		<ingredient name="resourceMutagen" count="1"/>
+		<ingredient name="MutantCoyoteParts" count="1"/> <!-- stat specific quest item -->
+		<ingredient name="drinkJarGrandpasLearningElixir" count="1"/> <!-- some drug -->
+		<ingredient name="resourceAcid" count="5"/>
+		<ingredient name="foodRawMeat" count="100"/> 
+	</recipe>
+
+	<recipe name="bookBerserker" count="1" craft_area="chemistryStation">
+		<ingredient name="resourceMutagen" count="1"/>
+		<ingredient name="MutantBearParts" count="1"/> <!-- stat specific quest item -->
+		<ingredient name="drugSteroids" count="1"/> <!-- some drug -->
+		<ingredient name="resourceAcid" count="5"/>
+		<ingredient name="foodRawMeat" count="100"/> 
+	</recipe>
+
+	<recipe name="bookNaturalArmor" count="1" craft_area="chemistryStation">
+		<ingredient name="resourceMutagen" count="1"/>
+		<ingredient name="MutantBoarParts" count="1"/> <!-- stat specific quest item -->
+		<ingredient name="drugFortBites" count="1"/> <!-- some drug -->
+		<ingredient name="resourceAcid" count="5"/>
+		<ingredient name="foodRawMeat" count="100"/> 
+	</recipe>
+	
+	<recipe name="bookUnnaturalSpeed" count="1" craft_area="chemistryStation">
+		<ingredient name="resourceMutagen" count="1"/>
+		<ingredient name="MutantCatParts" count="1"/> <!-- stat specific quest item -->
+		<ingredient name="drinkYuccaJuiceSmoothie" count="1"/> <!-- some drug -->
+		<ingredient name="resourceAcid" count="5"/>
+		<ingredient name="foodRawMeat" count="100"/> 
+	</recipe>
+	
+	<recipe name="bookZanshin" count="1" craft_area="chemistryStation">
+		<ingredient name="resourceMutagen" count="1"/>
+		<ingredient name="MutantDireWolfParts" count="1"/> <!-- stat specific quest item -->
+		<ingredient name="drugRecog" count="1"/> <!-- some drug -->
+		<ingredient name="resourceAcid" count="5"/>
+		<ingredient name="foodRawMeat" count="100"/> 
+	</recipe>
+	
+	<recipe name="qc_HomingBeacon" count="1">
+		<ingredient name="resourceUnpoweredHomingBeacon" count="1"/>
+		<ingredient name="carBattery" count="1"/>
+	</recipe>
+	
+	
+	<recipe name="meleePyrofocus" count="1" craft_area="chemistryStation" craft_time="60" tags="learnable">
+		<ingredient name="resourceRockSmall" count="10"/>
+		<ingredient name="resourceRawDiamond" count="1"/>
+		<ingredient name="resourceCoal" count="20"/>
+		<ingredient name="resourcePotassiumNitratePowder" count="20"/> 
+	</recipe>
+	
+</append>
+
+</configs>

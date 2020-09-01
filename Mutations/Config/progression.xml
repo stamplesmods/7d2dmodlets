@@ -1,0 +1,213 @@
+<configs>
+<insertAfter xpath="/progression/attributes/attribute[@name='attIntellect']" > <!-- Mutations Attribute -->
+	<attribute name="attMutations" name_key="attMutations" desc_key="attMutationsDesc" icon="ui_game_symbol_chemistry" min_level="1" max_level="6" base_skill_point_cost="0">
+		<level_requirements level="1"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="0"/></level_requirements>
+		<level_requirements level="2"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="0"/></level_requirements>
+		<level_requirements level="3"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="0"/></level_requirements>
+		<level_requirements level="4"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="0"/></level_requirements>
+		<level_requirements level="5"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="0"/></level_requirements>
+		<level_requirements level="6"><requirement name="PlayerLevel" operation="GTE" value="1" desc_key="0"/></level_requirements>
+
+		<effect_group>
+			<passive_effect name="BarteringBuying" operation="base_add" level="2,3,4,5,6" value="-0.05,-0.1,-0.2,-0.35,-0.50"/>
+			<passive_effect name="BarteringSelling" operation="base_add" level="2,3,4,5,6" value="-0.05,-0.1,-0.2,-0.35,-0.50"/>
+			<effect_description level="1"  desc_key="attMutationsRank01Desc" long_desc_key="attMutationsRank01LongDesc"/>
+			<effect_description level="2"  desc_key="attMutationsRank02Desc" long_desc_key="attMutationsRank02LongDesc"/>
+			<effect_description level="3"  desc_key="attMutationsRank03Desc" long_desc_key="attMutationsRank03LongDesc"/>
+			<effect_description level="4"  desc_key="attMutationsRank04Desc" long_desc_key="attMutationsRank04LongDesc"/>
+			<effect_description level="5"  desc_key="attMutationsRank05Desc" long_desc_key="attMutationsRank05LongDesc"/>
+			<effect_description level="6"  desc_key="attMutationsRank06Desc" long_desc_key="attMutationsRank06LongDesc"/>
+		</effect_group>
+	</attribute>
+</insertAfter>
+
+<insertAfter xpath="/progression/skills/skill[@name='skillIntellectCraftsmanship']" > <!-- Fauna Mutations -->
+	<skill name="skillFaunaMutations" parent="attMutations" name_key="skillFaunaMutationsName" desc_key="skillFaunaMutationsDesc" long_desc_key="skillFaunaMutationsLongDesc" icon="ui_game_symbol_animal_tracker"><effect_group/></skill>
+</insertAfter>
+
+<insertAfter xpath="/progression/perks/perk[@name='perkTurrets']" > <!-- Pyrokinesis -->
+	<perk name="perkPyrokinesis" parent="skillFaunaMutations" max_level="1" name_key="perkPyrokinesisName" desc_key="perkPyrokinesisDesc" icon="ui_game_symbol_fire" base_skill_point_cost="0">
+		<level_requirements level="1">
+			<requirement name="ProgressionLevel" progression_name="attIntellect" operation="GTE" value="10" desc_key="reqIntellectLevel10"/>
+		</level_requirements>
+		
+		<effect_group name="PyrofocusRecipe" tiered="false">
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="meleePyrofocus"/>
+		</effect_group>
+		
+		<effect_group name="pyro abilities" tiered="false">
+			<requirement name="ItemHasTags" tags="perkPyrokinesis"/>
+			<requirement name="ProgressionLevel" progression_name="perkPyrokinesis" operation="GTE" value="1"/>
+			<passive_effect name="MaxRange" operation="base_set" level="1" value="10"/>
+<!-- 			<passive_effect name="EntityDamage" operation="base_set" level="1" value="3"/> -->
+			<effect_description level="1" desc_key="perkPyrokinesisRank1Desc" long_desc_key="perkPyrokinesisRank1LongDesc"/>
+		</effect_group>
+
+		<effect_group name="pyroKnockdown" tiered="false">
+			<triggered_effect trigger="onSelfAttackedOther" action="Ragdoll" target="other" duration="3" force="400">
+				<requirement name="ItemHasTags" tags="perkPyrokinesis"/>
+				<requirement name="ProgressionLevel" progression_name="perkPyrokinesis" operation="GTE" value="1"/>
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="100"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfAttackedOther" action="Ragdoll" target="other" duration="3" force="400">
+				<requirement name="ItemHasTags" tags="perkPyrokinesis"/>
+				<requirement name="ProgressionLevel" progression_name="perkPyrokinesis" operation="GTE" value="1"/>
+				<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="100"/>
+			</triggered_effect>
+			
+		</effect_group>
+	
+		<effect_group name="new Pyro Fire" tiered="false">
+			<requirement name="ItemHasTags" tags="perkPyrokinesis"/>
+			<requirement name="ProgressionLevel" progression_name="perkPyrokinesis" operation="GTE" value="1"/>
+			<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".93"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="100"/>
+			<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffBurningMolotov"/> 
+			<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$buffBurningMolotovDuration" operation="set" value="10"></triggered_effect>
+		</effect_group>
+
+		<effect_group name="always refresh existing Pyro Fire" tiered="false">
+			<requirement name="ItemHasTags" tags="perkPyrokinesis"/>
+			<requirement name="ProgressionLevel" progression_name="perkPyrokinesis" operation="GTE" value="1"/>
+			<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".93"/>
+			<requirement name="HasBuff" target="other" buff="buffBurningMolotov"/>
+			<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffBurningMolotov"/> 
+			<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="$buffBurningMolotovDuration" operation="set" value="10"></triggered_effect>
+		</effect_group>
+	</perk>
+</insertAfter>
+
+<insertAfter xpath="/progression/perks/perk[@name='perkDeepCuts']" > <!-- Unnatural Speed -->
+	<perk name="perkUnnaturalSpeed" parent="skillFaunaMutations" max_level="1" name_key="perkUnnaturalSpeedName" desc_key="perkUnnaturalSpeedDesc" icon="ui_game_symbol_agility" base_skill_point_cost="0">
+		<level_requirements level="1">
+			<requirement name="ProgressionLevel" progression_name="attAgility" operation="GTE" value="10" desc_key="reqAgilityLevel10"/>
+		</level_requirements>
+		<effect_group>
+			<requirement name="ItemHasTags" tags="bowDrawPenalty"/> <!-- Bow Draw speed -->
+				<passive_effect name="RoundsPerMinute" operation="perc_add" level="1" value="1.5"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="ItemHasTags" tags="perkArchery"/> <!-- Bow Handling speed (ADS?) -->
+				<passive_effect name="WeaponHandling" operation="perc_add" level="1" value="1.5"/>
+				<passive_effect name="SpreadDegreesVertical" operation="perc_add" level="1" value="-0.6"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="perc_add" level="1" value="-0.6"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="perc_add" level="1" value="-0.4"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="perc_add" level="1" value="-0.4"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="perc_add" level="1" value="-0.3"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="perc_add" level="1" value="-0.3"/>
+
+		</effect_group>
+
+		<effect_group>
+			<requirement name="ItemHasTags" tags="perkGunslinger"/> <!-- Pistol/SMG bonus reload speed and hipfire -->
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" level="1" value="0.50"/>
+				<passive_effect name="SpreadDegreesVertical" operation="perc_add" level="1" value="-0.3"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="perc_add" level="1" value="-0.3"/>
+				<passive_effect name="SpreadMultiplierAiming" operation="perc_add" level="1" value="-0.4"/>
+				<passive_effect name="SpreadMultiplierCrouching" operation="perc_add" level="1" value="-0.4"/>
+				<passive_effect name="SpreadMultiplierWalking" operation="perc_add" level="1" value="-0.3"/>
+				<passive_effect name="SpreadMultiplierRunning" operation="perc_add" level="1" value="-0.3"/>
+		</effect_group>
+
+		<effect_group>
+			<requirement name="ItemHasTags" tags="perkDeepCuts"/> <!-- Edge weapon dismember chance, match up to sledges -->
+			<passive_effect name="DismemberChance" operation="base_add" level="1" value=".3"/>
+		</effect_group>
+		
+		<effect_group> <!-- Mobility run and jump -->
+			<passive_effect name="JumpStrength" operation="perc_add" level="1" value=".75"/> <!-- .75% = +2 blocks -->
+			<passive_effect name="WalkSpeed" operation="perc_add" level="1" value="0.1"/>
+			<passive_effect name="RunSpeed" operation="perc_add" level="1" value="0.1"/>
+			<effect_description level="1" desc_key="perkUnnaturalSpeedRank1Desc" long_desc_key="perkUnnaturalSpeedRank1LongDesc"/>/>
+		</effect_group>
+		
+	</perk>
+</insertAfter>
+
+<insertAfter xpath="/progression/perks/perk[@name='perkSkullCrusher']" > <!-- Berserker -->
+	<perk name="perkBerserker" parent="skillFaunaMutations" max_level="1" name_key="perkBerserkerName" desc_key="perkBerserkerDesc" icon="ui_game_symbol_muscle" base_skill_point_cost="0">
+		<level_requirements level="1">
+			<requirement name="ProgressionLevel" progression_name="attStrength" operation="GTE" value="10" desc_key="reqStrengthLevel10"/>
+		</level_requirements>
+		
+		<effect_group> <!-- Add buff on melee or shotgun kill -->
+			<requirement name="ItemHasTags" tags="melee,shotgun"/>
+			
+			<passive_effect name="StaminaLoss" operation="perc_add" level="1" value="-0.15"/>
+			<passive_effect name="StaminaLoss" operation="perc_add" level="1" value="-0.15" tags="secondary"/>
+			
+			<triggered_effect trigger="onSelfKilledOther" action="AddBuff" buff="buffBerserker">
+				<requirement name="ProgressionLevel" progression_name="perkBerserker" operation="GTE" value="1"/>
+			</triggered_effect>
+		</effect_group>
+		
+		<effect_group> <!-- Block dmg tools, sledge -->
+			<requirement name="ItemHasTags" tags="sledge,perkMiner69r"/>
+			<passive_effect name="BlockDamage" operation="perc_add" level="1" value="1"/>
+			<effect_description level="1" desc_key="perkBerserkerRank1Desc" long_desc_key="perkBerserkerRank1LongDesc"/>
+		</effect_group>
+
+	</perk>
+</insertAfter>
+
+<insertAfter xpath="/progression/perks/perk[@name='perkJavelinMaster']" > <!-- Zanshin -->
+	<perk name="perkZanshin" parent="skillFaunaMutations" max_level="1" name_key="perkZanshinName" desc_key="perkZanshinDesc" icon="ui_game_symbol_stealth" base_skill_point_cost="0">
+		<level_requirements level="1">
+			<requirement name="ProgressionLevel" progression_name="attPerception" operation="GTE" value="10" desc_key="reqPerceptionLevel10"/>
+		</level_requirements>
+
+		<effect_group>
+			<passive_effect name="TargetArmor" operation="perc_add" level="1" value="-.45">
+				<requirement name="ItemHasTags" tags="perkGunslinger,perkBoomstick,perkDeadEye,perkMachineGunner"/>
+			</passive_effect>
+		</effect_group>
+		
+		<effect_group> <!-- Lock Breaker -->
+			<passive_effect name="BlockDamage" operation="base_add" value="1000" tags="door">
+				<requirement name="ItemHasTags" tags="perkDeadEye"/>
+			</passive_effect>
+		
+			<passive_effect name="BlockDamage" operation="base_add" value="10000" tags="safes">
+				<requirement name="ItemHasTags" tags="perkDeadEye"/>
+			</passive_effect>
+		</effect_group>
+		
+		<effect_group>
+			<requirement name="ItemHasTags" tags="perkDeadEye"/>
+				<passive_effect name="WeaponHandling" operation="perc_add" level="1" value="0.20"/>
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" level="1" value="0.5"/>
+			<effect_description level="1" desc_key="perkZanshinRank1Desc" long_desc_key="perkZanshinRank1LongDesc"/>
+		</effect_group>
+
+	</perk>
+</insertAfter>
+
+<insertAfter xpath="/progression/perks/perk[@name='perkMachineGunner']" > <!-- Natural Armor -->
+	<perk name="perkNaturalArmor" parent="skillFaunaMutations" max_level="1" name_key="perkNaturalArmorName" desc_key="perkNaturalArmorNameDesc" icon="ui_game_symbol_armor_iron" base_skill_point_cost="0">
+		<level_requirements level="1">
+			<requirement name="ProgressionLevel" progression_name="attFortitude" operation="GTE" value="10" desc_key="reqFortitudeLevel10"/>
+		</level_requirements>
+
+
+		
+		<effect_group tiered="false">
+			<passive_effect name="HealthLoss" operation="perc_subtract" level="1" value=".10"/>
+			<passive_effect name="BuffResistance" operation="base_add" level="1" value="0.30" tags="buffInjuryBleeding"/>
+			<effect_description level="1" desc_key="perkNaturalArmorRank1Desc" long_desc_key="perkNaturalArmorRank1LongDesc"/>
+		</effect_group>
+		
+		<effect_group> <!-- auto rifles handling/reload bonus -->
+			<requirement name="ItemHasTags" tags="perkMachineGunner"/>
+				<passive_effect name="KickDegreesVerticalMin" operation="perc_add" level="1" value="-.03"/>
+				<passive_effect name="KickDegreesVerticalMax" operation="perc_add" level="1" value="-.10"/>
+				<passive_effect name="KickDegreesHorizontalMin" operation="perc_add" level="1" value="-.03"/>
+				<passive_effect name="KickDegreesHorizontalMax" operation="perc_add" level="1" value="-.10"/>
+				<passive_effect name="IncrementalSpreadMultiplier" operation="perc_add" level="1" value="-.20"/>
+		</effect_group>
+
+	</perk>
+</insertAfter>
+
+</configs>
+
