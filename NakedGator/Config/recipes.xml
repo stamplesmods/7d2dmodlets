@@ -1,7 +1,7 @@
 <configs>
 <append xpath="/recipes">
 
-	<recipe name="drinkNakedGator" count="1" craft_area="chemistryStation">
+	<recipe name="drinkNakedGator" count="1" craft_area="campfire" craft_tool="toolCookingPot">
 		<ingredient name="drinkCanMegaCrush" count="1"/>
 		<ingredient name="drinkJarBeer" count="1"/> 
 		<ingredient name="resourceBrokenGlass" count="1"/>
