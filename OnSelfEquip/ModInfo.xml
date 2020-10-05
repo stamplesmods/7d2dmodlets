@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<xml>
-	<ModInfo>
-		<Name value="OnSelfEquip" />
-		<Description value="Show how onSelfEquip is still broken in 19.1"/>
-		<Author value="stample, stamplesmods@gmail.com" />
-		<Version value="1.0.0" />
-	</ModInfo>
-</xml>
