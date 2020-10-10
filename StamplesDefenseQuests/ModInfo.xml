@@ -2,7 +2,7 @@
 <xml>
 	<ModInfo>
 		<Name value="StamplesDefenseQuests" />
-		<Description value="Defense Quests creates a couple quests that send waves of zeds at you"/>
+		<Description value="Defense Quests creates a couple quests that send waves of zeds at you while you defend random T1 and T2 locations.  Special thanks to geengaween for providing the ideas that led to this."/>
 		<Author value="stample, stamplesmods@gmail.com" />
 		<Version value="0.1.0" />
 	</ModInfo>
