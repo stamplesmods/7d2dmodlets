@@ -1,0 +1,33 @@
+<configs>
+
+<append xpath="/recipes">
+	
+	<recipe name="stamplesSurviveQuests_T1_Receiver" count="1" craft_time="10">
+		<ingredient name="resourceForgedIron" count="1"/>
+		<ingredient name="resourceElectricParts" count="1"/>
+	</recipe>
+	
+	<recipe name="stamplesSurviveQuests_T2_Receiver" count="1" craft_time="10">
+		<ingredient name="resourceForgedIron" count="1"/>
+		<ingredient name="resourceElectricParts" count="2"/>
+	</recipe>
+			
+	<recipe name="stamplesSurviveQuests_T3_Receiver" count="1" craft_time="10">
+		<ingredient name="resourceForgedIron" count="2"/>
+		<ingredient name="resourceElectricParts" count="3"/>
+	</recipe>
+			
+	<recipe name="stamplesSurviveQuests_T4_Receiver" count="1" craft_time="10">
+		<ingredient name="resourceForgedSteel" count="1"/>
+		<ingredient name="resourceElectricParts" count="3"/>
+		<ingredient name="resourceScrapPolymers" count="2"/>
+	</recipe>
+		
+	<recipe name="stamplesSurviveQuests_T5_Receiver" count="1" craft_time="10">
+		<ingredient name="resourceForgedSteel" count="2"/>
+		<ingredient name="resourceElectricParts" count="4"/>
+		<ingredient name="resourceScrapPolymers" count="3"/>
+	</recipe>
+</append>
+
+</configs>

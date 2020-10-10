@@ -1,0 +1,70 @@
+<configs>
+
+<append xpath="/items">
+
+
+
+<item name="stamplesSurviveQuests_T1_Receiver">
+	<property name="CustomIcon" value="controlPanelTop05"/>
+	<property name="Extends" value="challengeQuestMaster"/>
+	<property name="EconomicValue" value="100"/>
+	<property name="DescriptionKey" value="stamplesDefenseQuests_T1_ReceiverDesc"/>
+	<property name="SellableToTrader" value="false"/>
+	<property class="Action0">
+		<property name="UseAnimation" value="false"/>
+		<property name="QuestGiven" value="tier1_stamplesDefenseQuests"/>
+	</property>
+</item>
+
+<item name="stamplesSurviveQuests_T2_Receiver">
+	<property name="CustomIcon" value="controlPanelTop05"/>
+	<property name="Extends" value="challengeQuestMaster"/>
+	<property name="EconomicValue" value="100"/>
+	<property name="DescriptionKey" value="stamplesDefenseQuests_T2_ReceiverDesc"/>
+	<property name="SellableToTrader" value="false"/>
+	<property class="Action0">
+		<property name="UseAnimation" value="false"/>
+		<property name="QuestGiven" value="tier2_stamplesDefenseQuests"/>
+	</property>
+</item>
+
+<item name="stamplesSurviveQuests_T3_Receiver">
+	<property name="CustomIcon" value="controlPanelTop05"/>
+	<property name="Extends" value="challengeQuestMaster"/>
+	<property name="EconomicValue" value="100"/>
+	<property name="DescriptionKey" value="stamplesDefenseQuests_T3_ReceiverDesc"/>
+	<property name="SellableToTrader" value="false"/>
+	<property class="Action0">
+		<property name="UseAnimation" value="false"/>
+		<property name="QuestGiven" value="tier3_stamplesDefenseQuests"/>
+	</property>
+</item>
+
+<item name="stamplesSurviveQuests_T4_Receiver">
+	<property name="CustomIcon" value="controlPanelTop05"/>
+	<property name="Extends" value="challengeQuestMaster"/>
+	<property name="EconomicValue" value="100"/>
+	<property name="DescriptionKey" value="stamplesDefenseQuests_T4_ReceiverDesc"/>
+	<property name="SellableToTrader" value="false"/>
+	<property class="Action0">
+		<property name="UseAnimation" value="false"/>
+		<property name="QuestGiven" value="tier4_stamplesDefenseQuests"/>
+	</property>
+</item>
+
+<item name="stamplesSurviveQuests_T5_Receiver">
+	<property name="CustomIcon" value="controlPanelTop05"/>
+	<property name="Extends" value="challengeQuestMaster"/>
+	<property name="EconomicValue" value="100"/>
+	<property name="DescriptionKey" value="stamplesDefenseQuests_T5_ReceiverDesc"/>
+	<property name="SellableToTrader" value="false"/>
+	<property class="Action0">
+		<property name="UseAnimation" value="false"/>
+		<property name="QuestGiven" value="tier5_stamplesDefenseQuests"/>
+	</property>
+</item>
+
+</append>
+</configs>
+
+

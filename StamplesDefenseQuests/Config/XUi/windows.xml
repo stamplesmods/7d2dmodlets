@@ -1,0 +1,4 @@
+<configs>
+	<set xpath="/windows/window[@name='windowQuestObjectives']/rect[@name='content']/rect[@visible='{showquest}']/grid[@name='objectiveList']/@rows">10</set>
+</configs>
+

@@ -1,0 +1,65 @@
+<configs>
+	<append xpath="/entity_classes">
+
+	<entity_class name="zombieMummyT1" extends="zombieWightFeral">
+		<property name="Tags" value="entity,zombie,walker"/>
+		<property name="SizeScale" value="1.20"/>
+		<property name="ExperienceGain" value="2000"/>
+		<property name="DeadBodyHitPoints" value="1000"/>
+		<property name="ReplaceMaterial0" value="entities/animals/vulture/materials/vulture_v2"/>
+		<property name="MoveSpeedAggro" value="0.2, 1.1"/> <!-- normal zombies -->
+	
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="400"/>
+			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
+		</effect_group>
+	</entity_class>
+	
+	<entity_class name="zombieMummyT2" extends="zombieMummyT1">
+		<property name="Tags" value="entity,zombie,walker"/>
+		<property name="ExperienceGain" value="2500"/>
+		<property name="MoveSpeedAggro" value="0.2, 1.1"/> <!-- normal zombies -->
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="800"/>
+			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
+		</effect_group>
+	</entity_class>
+	
+	<entity_class name="zombieMummyT3" extends="zombieMummyT1">
+		<property name="Tags" value="entity,zombie,walker,feral"/>
+		<property name="ExperienceGain" value="3000"/>
+		<property name="MoveSpeedAggro" value=".5, 1.35"/> <!-- feral zombies -->
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="1000"/>
+			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
+		</effect_group>
+	</entity_class>
+	
+	<entity_class name="zombieMummyT4" extends="zombieMummyT1">
+		<property name="Tags" value="entity,zombie,walker,feral"/>
+		<property name="ExperienceGain" value="3500"/>
+		<property name="MoveSpeedAggro" value=".5, 1.35"/> <!-- feral zombies -->
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="1200"/>
+			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
+		</effect_group>
+	</entity_class>
+	
+	<entity_class name="zombieMummyT5" extends="zombieMummyT1">
+		<property name="Tags" value="entity,zombie,walker,feral,radiated"/>
+		<property name="ExperienceGain" value="4000"/>
+		<property name="MoveSpeedAggro" value=".5, 1.35"/> <!-- feral zombies -->
+		<property name="ReplaceMaterial1" value="#Entities/Zombies?Zombies/Materials/rad_eye.mat"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="1500"/>
+			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
+			
+			<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="8.1"/>
+			<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+		</effect_group>
+	</entity_class>
+	
+	</append>
+
+</configs>
+
