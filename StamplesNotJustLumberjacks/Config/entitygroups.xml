@@ -1,0 +1,12 @@
+<configs>
+
+<remove xpath="/entitygroups/entitygroup[@name='SnowZombies']/entity[@name='zombieSnow']"/>
+<append xpath="/entitygroups/entitygroup[@name='SnowZombies']">
+	<entity name="animalZombieDog" prob=".02"/>
+	<entity name="zombieFemaleFat" prob=".1"/>
+	<entity name="zombieSkateboarder" prob=".1"/>
+	<entity name="zombieMaleHazmat" prob=".1"/>
+	<entity name="zombieSoldier" prob=".1"/>
+	<entity name="zombieSnow" prob="1"/>
+</append>
+</configs>

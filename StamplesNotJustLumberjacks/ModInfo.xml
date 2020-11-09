@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<ModInfo>
+		<Name value="StamplesNotJustLumberjacks" />
+		<Description value="Add some other zombies into ZombieSnow group so wanderers in Snow are 100% lumberjacks"/>
+		<Author value="stample, stamplesmods@gmail.com" />
+		<Version value="1.0.0" />
+	</ModInfo>
+</xml>
