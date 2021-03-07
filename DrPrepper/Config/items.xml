@@ -1,7 +1,7 @@
 <configs>
 <append xpath="/items">
 
-<item name="Dr. Prepper">
+<item name="drPrepper">
 	<property name="Extends" value="drinkJarRedTea"/>
 	<property name="DisplayType" value="DrPrepper"/>
 	<property name="EconomicValue" value="48"/>
