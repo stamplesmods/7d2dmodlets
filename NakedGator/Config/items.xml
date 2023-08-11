@@ -5,8 +5,8 @@
 	<property name="Extends" value="drinkJarRedTea"/>
 	<property name="DisplayType" value="NakedGator"/>
 	<property name="EconomicValue" value="150"/>
-	<!-- <property name="CustomIcon" value="NakedGator" /> custom icon available -->
-	<property name="CustomIcon" value="drinkCanMegaCrush"/><property name="CustomIconTint" value="20,200,35"/>
+	<property name="CustomIcon" value="NakedGator" />
+	<-- <property name="CustomIcon" value="drinkCanMegaCrush"/><property name="CustomIconTint" value="20,200,35"/> -->
 	<property class="Action0">
 		<property name="Create_item" value="drinkCanEmpty"/>
 	</property>
